@@ -9,6 +9,7 @@
 </head>
 <body>
 
+<!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container">
         <a class="navbar-brand" href="#">KinoXP</a>
@@ -34,46 +35,22 @@
     </div>
 </nav>
 
-<!-- Jumbotron - Big box of information -->
+<!-- Jumbotron -->
 <header class="jumbotron jumbotron-fluid">
     <div class="container">
         <h1 class="display-4">Welcome to KinoXP</h1>
-        <p class="lead">Your source for the latest movies and showtimes.</p>
+        <p class="lead">Your source for the latest and greatest movies.</p>
     </div>
 </header>
 
-<!-- Movie -->
+<!-- Movies -->
 <div class="container">
     <h1 class="mt-4 mb-3">Movie Listings</h1>
-    <div class="row">
-
-        <div class="col-6 col-sm-6 col-md-4 col-lg-3 mb-4">
-            <div class="card">
-                <div class="film">
-                    <a class="movie poster" href="#">
-                        <img src="images/testMorbius.jpg" height="390" width="304"/>
-                    </a>
-                    <div class="movieTitle p-2">
-                        <div class="col-12">
-                            <h5 class="card-title text-center">Morbius</h5>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-12">
-                            <a href="#">
-                                <div class="d-grid gap-2">
-                                    <button class="btn btn-secondary">See all days</button>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
+    <div class="row" id="movies-container">
     </div>
 </div>
 
+<!-- JavaScript -->
+<script type="module" src="js/homepage.js"></script>
 </body>
 </html>
