@@ -50,4 +50,3 @@ async function fetchMovies() {
 fetchMovies();
 
 
-fetchMovies();
