@@ -1,0 +1,11 @@
+/* styles.css */
+
+.left-column {
+    flex: 0 0 289px; /* Fixed width for left column */
+    max-width: 100%;
+}
+
+.right-column {
+    flex-grow: 1; /* Let the right column grow to fill available space */
+    max-width: 75%; /* Limit the right column to 75% of container width */
+}

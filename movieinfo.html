@@ -3,16 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KinoXP</title>
+    <title>KinoXP - Movie Info</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@latest/dist/css/bootstrap.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@latest/dist/js/bootstrap.min.js"></script>
+    <!-- Link to your custom CSS file -->
+    <link rel="stylesheet" href="css/styles.css">
 </head>
+
+<!-- ... Rest of your HTML code ... -->
+
 <body>
 
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container">
         <a class="navbar-brand" href="index.html">KinoXP</a>
+        <!-- Navbar code remains the same -->
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -32,22 +37,25 @@
     </div>
 </nav>
 
-<!-- Jumbotron -->
-<header class="jumbotron jumbotron-fluid">
-    <div class="container">
-        <h1 class="display-4">Welcome to KinoXP</h1>
-        <p class="lead">Your source for the latest and greatest movies.</p>
-    </div>
-</header>
+<!-- Movie Info Content -->
+<div class="container mt-4">
+    <h1 class="mb-3">Movie Information</h1>
+    <div class="d-flex">
+        <!-- Left Column - Movie Info -->
+        <div class="left-column" id="movie-info">
+            <!-- Movie details will be displayed here using JavaScript -->
+        </div>
+        <!-- Right Column - Empty Grid -->
+        <div class="right-column" id="empty-info">
+            <!-- You can add further movie info here -->
+            <img src="https://i.redd.it/79arl8uxjf281.jpg" height="610" width="1067" />
 
-<!-- Movies -->
-<div class="container">
-    <h1 class="mt-4 mb-3">Movie Listings</h1>
-    <div class="row" id="movies-container">
+        </div>
     </div>
 </div>
 
 <!-- JavaScript -->
-<script type="module" src="js/movies.js"></script>
+<script type="module" src="js/movieinfo.js"></script>
 </body>
 </html>
+
