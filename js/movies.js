@@ -10,7 +10,7 @@ function createMovieCard(movie) {
     movieTemplate.innerHTML = `
         <div class="card">
             <div class="film">
-                <a class="movie poster" href="#">
+                <a class="movie poster" href="movieinfo.html?id=${movie.id}">
                     <img src="${movie.movieImageUrl}" height="390" width="304" alt="${movie.title}" />
                 </a>
                 <div class="movieTitle p-2">
@@ -20,9 +20,9 @@ function createMovieCard(movie) {
                 </div>
                 <div class="row">
                     <div class="col-12">
-                        <a href="#">
+                        <a href="movieinfo.html?id=${movie.id}">
                             <div class="d-grid gap-2">
-                                <button class="btn btn-secondary">See all days</button>
+                            <button class="btn btn-secondary">See all days</button>
                             </div>
                         </a>
                     </div>
@@ -46,5 +46,8 @@ async function fetchMovies() {
         console.error("Error fetching movies:", error);
     }
 }
+
+fetchMovies();
+
 
 fetchMovies();

@@ -5,8 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1cc78451-9cc5-4111-9c2b-11636be42dbc" name="Changes" comment="frontend KinoXPFrontend">
-      <change afterPath="$PROJECT_DIR$/images/testMorbius.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/styles.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/movieinfo.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/movieinfo.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/movies.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/movies.js" afterDir="false" />
+    </list>
+    <list id="007ee5be-d559-4c19-b9ef-73c734ba0acc" name="Changes by simonbangdessau" comment="">
+      <change beforePath="$PROJECT_DIR$/js/movies.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/movies.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,15 +29,33 @@
       <list>
         <option value="package.json" />
         <option value="HTML File" />
+        <option value="JavaScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="developer" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 2
-}]]></component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/js/movies.js">
+      <ranges>
+        <range start1="12" end1="13" start2="12" end2="13" changelist="1cc78451-9cc5-4111-9c2b-11636be42dbc" />
+        <range start1="22" end1="23" start2="22" end2="23" changelist="1cc78451-9cc5-4111-9c2b-11636be42dbc" />
+        <range start1="24" end1="25" start2="24" end2="25" changelist="1cc78451-9cc5-4111-9c2b-11636be42dbc" />
+        <range start1="48" end1="48" start2="48" end2="51" changelist="1cc78451-9cc5-4111-9c2b-11636be42dbc" />
+        <range start1="49" end1="50" start2="52" end2="52" changelist="007ee5be-d559-4c19-b9ef-73c734ba0acc" />
+      </ranges>
+    </file>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
   <component name="ProjectId" id="2WCRb1PQr42OOeZFxpJms5rqMBk" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -43,8 +69,11 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "feature/indexPage",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "git-widget-placeholder": "feature/getmovieinfo",
+    "jdk.selected.JAVA_MODULE": "21",
     "last_opened_file_path": "C:/Users/nicla/OneDrive/Documents/3. Sem Dat/KinoXPFrontend/images",
+    "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -58,6 +87,8 @@
       <recent name="C:\Users\nicla\OneDrive\Documents\3. Sem Dat\KinoXPFrontend\images" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\tobia\IdeaProjects\KinoXPFrontend" />
+      <recent name="C:\Users\tobia\IdeaProjects\KinoXPFrontend\html" />
       <recent name="C:\Users\nicla\OneDrive\Documents\3. Sem Dat\KinoXPFrontend" />
     </key>
   </component>
@@ -84,6 +115,17 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="frontend KinoXPFrontend" />
