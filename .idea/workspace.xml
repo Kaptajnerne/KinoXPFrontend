@@ -4,18 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1cc78451-9cc5-4111-9c2b-11636be42dbc" name="Changes" comment="frontend KinoXPFrontend">
-      <change afterPath="$PROJECT_DIR$/css/styles.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/movieinfo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/movieinfo.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/movies.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/movies.js" afterDir="false" />
-    </list>
-    <list id="007ee5be-d559-4c19-b9ef-73c734ba0acc" name="Changes by simonbangdessau" comment="">
-      <change beforePath="$PROJECT_DIR$/js/movies.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/movies.js" afterDir="false" />
-    </list>
+    <list default="true" id="1cc78451-9cc5-4111-9c2b-11636be42dbc" name="Changes" comment="Added movieinfo.html, css.styles and bunch of href" />
+    <list id="007ee5be-d559-4c19-b9ef-73c734ba0acc" name="Changes by simonbangdessau" comment="Changes by simonbangdessau" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -41,17 +31,6 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/js/movies.js">
-      <ranges>
-        <range start1="12" end1="13" start2="12" end2="13" changelist="1cc78451-9cc5-4111-9c2b-11636be42dbc" />
-        <range start1="22" end1="23" start2="22" end2="23" changelist="1cc78451-9cc5-4111-9c2b-11636be42dbc" />
-        <range start1="24" end1="25" start2="24" end2="25" changelist="1cc78451-9cc5-4111-9c2b-11636be42dbc" />
-        <range start1="48" end1="48" start2="48" end2="51" changelist="1cc78451-9cc5-4111-9c2b-11636be42dbc" />
-        <range start1="49" end1="50" start2="52" end2="52" changelist="007ee5be-d559-4c19-b9ef-73c734ba0acc" />
-      </ranges>
-    </file>
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2
@@ -110,7 +89,23 @@
       <option name="project" value="LOCAL" />
       <updated>1696234916185</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Added movieinfo.html, css.styles and bunch of href">
+      <option name="closed" value="true" />
+      <created>1696327267725</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1696327267725</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Changes by simonbangdessau">
+      <option name="closed" value="true" />
+      <created>1696327276321</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1696327276321</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -129,6 +124,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="frontend KinoXPFrontend" />
-    <option name="LAST_COMMIT_MESSAGE" value="frontend KinoXPFrontend" />
+    <MESSAGE value="Added movieinfo.html, css.styles and bunch of href" />
+    <MESSAGE value="Changes by simonbangdessau" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changes by simonbangdessau" />
   </component>
 </project>
