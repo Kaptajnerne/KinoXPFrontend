@@ -4,16 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1cc78451-9cc5-4111-9c2b-11636be42dbc" name="Changes" comment="Startet login.html">
-      <change afterPath="$PROJECT_DIR$/contact.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/login.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/navbar.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/navbar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/movieinfo.html" beforeDir="false" afterPath="$PROJECT_DIR$/movieinfo.html" afterDir="false" />
-    </list>
+    <list default="true" id="1cc78451-9cc5-4111-9c2b-11636be42dbc" name="Changes" comment="lavet sædesystem" />
+    <list id="cc68933f-4a39-42f5-ac60-df583af243eb" name="Changes by kjartanleander" comment="" />
     <list id="007ee5be-d559-4c19-b9ef-73c734ba0acc" name="Changes by simonbangdessau" comment="Changes by simonbangdessau" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,9 +19,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="package.json" />
-        <option value="CSS File" />
-        <option value="JavaScript File" />
         <option value="HTML File" />
+        <option value="JavaScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -40,6 +32,45 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "SimonBD1"
+  }
+}]]></component>
+  <component name="GitToolBoxStore">
+    <option name="recentBranches">
+      <RecentBranches>
+        <option name="branchesForRepo">
+          <list>
+            <RecentBranchesForRepo>
+              <option name="branches">
+                <list>
+                  <RecentBranch>
+                    <option name="branchName" value="feature/SeePlaytimes" />
+                    <option name="lastUsedInstant" value="1696409394" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="testBranchTeams" />
+                    <option name="lastUsedInstant" value="1696409393" />
+                  </RecentBranch>
+                </list>
+              </option>
+              <option name="repositoryRootUrl" value="file://$PROJECT_DIR$" />
+            </RecentBranchesForRepo>
+          </list>
+        </option>
+      </RecentBranches>
+    </option>
+  </component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="b869d2fa-7f4d-4eaf-9d4e-00335c4eb1e7" />
+        <option name="url" value="https://github.com/SimonBD1/KinoXPFrontend.git" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2
@@ -58,7 +89,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "codeWithMe.voiceChat.enabledByDefault": "false",
-    "git-widget-placeholder": "feature/login",
+    "git-widget-placeholder": "feature/SeePlaytimes",
     "jdk.selected.JAVA_MODULE": "21",
     "last_opened_file_path": "C:/Users/nicla/OneDrive/Documents/3. Sem Dat/KinoXPFrontend/images",
     "list.type.of.created.stylesheet": "CSS",
@@ -130,7 +161,15 @@
       <option name="project" value="LOCAL" />
       <updated>1696328479202</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="lavet sædesystem">
+      <option name="closed" value="true" />
+      <created>1696416545329</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1696416545329</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -153,6 +192,7 @@
     <MESSAGE value="Changes by simonbangdessau" />
     <MESSAGE value="?" />
     <MESSAGE value="Startet login.html" />
-    <option name="LAST_COMMIT_MESSAGE" value="Startet login.html" />
+    <MESSAGE value="lavet sædesystem" />
+    <option name="LAST_COMMIT_MESSAGE" value="lavet sædesystem" />
   </component>
 </project>
