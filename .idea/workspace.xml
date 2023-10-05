@@ -4,10 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1cc78451-9cc5-4111-9c2b-11636be42dbc" name="Changes" comment="login page and movieinfo page">
-      <change beforePath="$PROJECT_DIR$/js/movieinfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/movieinfo.js" afterDir="false" />
+    <list default="true" id="007ee5be-d559-4c19-b9ef-73c734ba0acc" name="Changes by simonbangdessau" comment="Changes by simonbangdessau">
+      <change afterPath="$PROJECT_DIR$/css/Sal2.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/Schedule.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/Schedule2.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/movieinfosal2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/movies.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/movies.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/movieinfo.html" beforeDir="false" afterPath="$PROJECT_DIR$/movieinfo.html" afterDir="false" />
     </list>
-    <list id="007ee5be-d559-4c19-b9ef-73c734ba0acc" name="Changes by simonbangdessau" comment="Changes by simonbangdessau" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,37 +26,62 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="package.json" />
-        <option value="CSS File" />
-        <option value="JavaScript File" />
         <option value="HTML File" />
+        <option value="JavaScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="feature/login" />
+        <entry key="$PROJECT_DIR$" value="developer" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "LilNiclas"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;SimonBD1&quot;
   }
-}]]></component>
+}</component>
+  <component name="GitToolBoxStore">
+    <option name="recentBranches">
+      <RecentBranches>
+        <option name="branchesForRepo">
+          <list>
+            <RecentBranchesForRepo>
+              <option name="branches">
+                <list>
+                  <RecentBranch>
+                    <option name="branchName" value="feature/SeePlaytimes" />
+                    <option name="lastUsedInstant" value="1696409394" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="testBranchTeams" />
+                    <option name="lastUsedInstant" value="1696409393" />
+                  </RecentBranch>
+                </list>
+              </option>
+              <option name="repositoryRootUrl" value="file://$PROJECT_DIR$" />
+            </RecentBranchesForRepo>
+          </list>
+        </option>
+      </RecentBranches>
+    </option>
+  </component>
   <component name="GithubPullRequestsUISettings">
     <option name="selectedUrlAndAccountId">
       <UrlAndAccount>
-        <option name="accountId" value="20954d41-a3a2-4768-8cdb-ab7ef4ffed84" />
-        <option name="url" value="https://github.com/Kaptajnerne/KinoXPFrontend.git" />
+        <option name="accountId" value="b869d2fa-7f4d-4eaf-9d4e-00335c4eb1e7" />
+        <option name="url" value="https://github.com/SimonBD1/KinoXPFrontend.git" />
       </UrlAndAccount>
     </option>
   </component>
   <component name="ProjectColorInfo">{
-    &quot;associatedIndex&quot;: 2
-    }</component>
+  &quot;associatedIndex&quot;: 2
+}</component>
   <component name="ProjectId" id="2WCRb1PQr42OOeZFxpJms5rqMBk" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -65,7 +96,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "codeWithMe.voiceChat.enabledByDefault": "false",
-    "git-widget-placeholder": "developer",
+    "git-widget-placeholder": "Merging developer",
     "jdk.selected.JAVA_MODULE": "21",
     "last_opened_file_path": "C:/Users/nicla/OneDrive/Documents/3. Sem Dat/KinoXPFrontend/images",
     "list.type.of.created.stylesheet": "CSS",
@@ -137,31 +168,15 @@
       <option name="project" value="LOCAL" />
       <updated>1696328479202</updated>
     </task>
-    <task id="LOCAL-00006" summary="Added login.html, navbar.html, contact.html. Implemented navbar.js in all html.">
+    <task id="LOCAL-00006" summary="lavet sædesystem">
       <option name="closed" value="true" />
-      <created>1696330523677</created>
+      <created>1696416545329</created>
       <option name="number" value="00006" />
       <option name="presentableId" value="LOCAL-00006" />
       <option name="project" value="LOCAL" />
-      <updated>1696330523677</updated>
+      <updated>1696416545329</updated>
     </task>
-    <task id="LOCAL-00007" summary="Test push teams">
-      <option name="closed" value="true" />
-      <created>1696331083040</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1696331083040</updated>
-    </task>
-    <task id="LOCAL-00008" summary="login page and movieinfo page">
-      <option name="closed" value="true" />
-      <created>1696409454489</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1696409454489</updated>
-    </task>
-    <option name="localTasksCounter" value="9" />
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -184,8 +199,7 @@
     <MESSAGE value="Changes by simonbangdessau" />
     <MESSAGE value="?" />
     <MESSAGE value="Startet login.html" />
-    <MESSAGE value="Added login.html, navbar.html, contact.html. Implemented navbar.js in all html." />
-    <MESSAGE value="Test push teams" />
+    <MESSAGE value="lavet sædesystem" />
     <MESSAGE value="login page and movieinfo page" />
     <option name="LAST_COMMIT_MESSAGE" value="login page and movieinfo page" />
   </component>
