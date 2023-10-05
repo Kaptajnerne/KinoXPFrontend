@@ -7,7 +7,7 @@
 }
 
 .right-column {
-   justify-content: center;
+    justify-content: center;
     max-width: 70%;
     align-items: center;
     justify-content: center;
@@ -140,7 +140,7 @@ body {
 
 .all-seats {
     display: grid;
-    grid-template-columns: repeat(12, 1fr);
+    grid-template-columns: repeat(16, 1fr);
     grid-gap: 5px;
     margin: 40px 0;
     margin-top: 20px;

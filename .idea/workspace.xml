@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1cc78451-9cc5-4111-9c2b-11636be42dbc" name="Changes" comment="file renamed" />
+
     <list id="007ee5be-d559-4c19-b9ef-73c734ba0acc" name="Changes by simonbangdessau" comment="Changes by simonbangdessau" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,6 +32,45 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "SimonBD1"
+  }
+}]]></component>
+  <component name="GitToolBoxStore">
+    <option name="recentBranches">
+      <RecentBranches>
+        <option name="branchesForRepo">
+          <list>
+            <RecentBranchesForRepo>
+              <option name="branches">
+                <list>
+                  <RecentBranch>
+                    <option name="branchName" value="feature/SeePlaytimes" />
+                    <option name="lastUsedInstant" value="1696409394" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="testBranchTeams" />
+                    <option name="lastUsedInstant" value="1696409393" />
+                  </RecentBranch>
+                </list>
+              </option>
+              <option name="repositoryRootUrl" value="file://$PROJECT_DIR$" />
+            </RecentBranchesForRepo>
+          </list>
+        </option>
+      </RecentBranches>
+    </option>
+  </component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="b869d2fa-7f4d-4eaf-9d4e-00335c4eb1e7" />
+        <option name="url" value="https://github.com/SimonBD1/KinoXPFrontend.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2
 }</component>
@@ -49,7 +88,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "codeWithMe.voiceChat.enabledByDefault": "false",
-    "git-widget-placeholder": "main",
+
     "jdk.selected.JAVA_MODULE": "21",
     "last_opened_file_path": "C:/Users/nicla/OneDrive/Documents/3. Sem Dat/KinoXPFrontend/images",
     "list.type.of.created.stylesheet": "CSS",
@@ -105,7 +144,31 @@
       <option name="project" value="LOCAL" />
       <updated>1696327276321</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="?">
+      <option name="closed" value="true" />
+      <created>1696327540528</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1696327540528</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Startet login.html">
+      <option name="closed" value="true" />
+      <created>1696328479202</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1696328479202</updated>
+    </task>
+    <task id="LOCAL-00006" summary="lavet sædesystem">
+      <option name="closed" value="true" />
+      <created>1696416545329</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1696416545329</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -126,6 +189,9 @@
     <MESSAGE value="frontend KinoXPFrontend" />
     <MESSAGE value="Added movieinfo.html, css.styles and bunch of href" />
     <MESSAGE value="Changes by simonbangdessau" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changes by simonbangdessau" />
+    <MESSAGE value="?" />
+    <MESSAGE value="Startet login.html" />
+    <MESSAGE value="lavet sædesystem" />
+    <option name="LAST_COMMIT_MESSAGE" value="lavet sædesystem" />
   </component>
 </project>
