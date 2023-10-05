@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1cc78451-9cc5-4111-9c2b-11636be42dbc" name="Changes" comment="lavet sædesystem">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
-
+    <list default="true" id="1cc78451-9cc5-4111-9c2b-11636be42dbc" name="Changes" comment="lavet sædesystem" />
     <list id="007ee5be-d559-4c19-b9ef-73c734ba0acc" name="Changes by simonbangdessau" comment="Changes by simonbangdessau" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,7 +88,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "codeWithMe.voiceChat.enabledByDefault": "false",
-
+    "git-widget-placeholder": "developer",
     "jdk.selected.JAVA_MODULE": "21",
     "last_opened_file_path": "C:/Users/nicla/OneDrive/Documents/3. Sem Dat/KinoXPFrontend/images",
     "list.type.of.created.stylesheet": "CSS",
@@ -202,10 +199,10 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="frontend KinoXPFrontend" />
     <MESSAGE value="Added movieinfo.html, css.styles and bunch of href" />
-    <MESSAGE value="Changes by simonbangdessau" />
     <MESSAGE value="?" />
     <MESSAGE value="Startet login.html" />
     <MESSAGE value="lavet sædesystem" />
-    <option name="LAST_COMMIT_MESSAGE" value="lavet sædesystem" />
+    <MESSAGE value="Changes by simonbangdessau" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changes by simonbangdessau" />
   </component>
 </project>
