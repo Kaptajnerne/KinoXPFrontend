@@ -41,3 +41,5 @@ async function fetchMovieDetails() {
 // Call the fetchMovieDetails function to populate movie info
 console.log(movieId);
 fetchMovieDetails();
+
+
