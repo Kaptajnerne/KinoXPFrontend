@@ -10,7 +10,7 @@ function createMovieCard(movie) {
     movieTemplate.innerHTML = `
         <div class="card">
             <div class="film">
-                <a class="movie poster" href="movieinfo.html?id=${movie.id}">
+                <a class="movie poster" href="movieinfo.html?id=${movie.movieID}">
                     <img src="${movie.movieImageUrl}" height="390" width="304" alt="${movie.title}" />
                 </a>
                 <div class="movieTitle p-2">
@@ -20,7 +20,7 @@ function createMovieCard(movie) {
                 </div>
                 <div class="row">
                     <div class="col-12">
-                        <a href="movieinfo.html?id=${movie.id}">
+                        <a href="movieinfo.html?id=${movie.movieID}">
                             <div class="d-grid gap-2">
                             <button class="btn btn-secondary">See all days</button>
                             </div>
