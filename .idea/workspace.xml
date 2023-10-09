@@ -4,19 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1cc78451-9cc5-4111-9c2b-11636be42dbc" name="Changes" comment="Changes by simonbangdessau">
-      <change afterPath="$PROJECT_DIR$/.idea/git_toolbox_prj.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backup" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/showtimes.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reservation.html" afterDir="false" />
+    <list default="true" id="1cc78451-9cc5-4111-9c2b-11636be42dbc" name="Changes" comment="Fixed">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/Sal2.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/sal2.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/Schedule.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/scheduletheater1.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/Schedule2.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/scheduletheater2.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/movieinfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/movieinfo.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/movies.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/movies.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/contact.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/movieinfo.html" beforeDir="false" afterPath="$PROJECT_DIR$/movieinfo.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/movieinfosal2.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/navbar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reservation.html" beforeDir="false" afterPath="$PROJECT_DIR$/reservation.html" afterDir="false" />
     </list>
     <list id="007ee5be-d559-4c19-b9ef-73c734ba0acc" name="Changes by simonbangdessau" comment="Changes by simonbangdessau" />
     <option name="SHOW_DIALOG" value="false" />
@@ -101,7 +96,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "codeWithMe.voiceChat.enabledByDefault": "false",
-    "git-widget-placeholder": "Merging developer",
+    "git-widget-placeholder": "developer",
     "jdk.selected.JAVA_MODULE": "21",
     "last_opened_file_path": "C:/Users/nicla/OneDrive/Documents/3. Sem Dat/KinoXPFrontend/images",
     "list.type.of.created.stylesheet": "CSS",
@@ -200,7 +195,15 @@
       <option name="project" value="LOCAL" />
       <updated>1696585590056</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Fixed">
+      <option name="closed" value="true" />
+      <created>1696847351131</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1696847351131</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -223,8 +226,8 @@
     <MESSAGE value="?" />
     <MESSAGE value="Startet login.html" />
     <MESSAGE value="lavet sædesystem" />
-    <MESSAGE value="Fixed" />
     <MESSAGE value="Changes by simonbangdessau" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changes by simonbangdessau" />
+    <MESSAGE value="Fixed" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed" />
   </component>
 </project>

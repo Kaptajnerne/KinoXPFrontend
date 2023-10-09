@@ -7,37 +7,41 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+
+<!-- Navigation bar -->
 <div id="navbar-container"></div>
 
+<!-- Seat picker -->
 <div class="tickets">
-                <div class="ticket-selector">
-                    <div class="head">
-                        <div class="title">Movie Name</div>
-                    </div>
-                    <div class="seats">
-                        <div class="status">
-                            <div class="item">Available</div>
-                            <div class="item">Booked</div>
-                            <div class="item">Selected</div>
-                        </div>
-                        <div class="all-seats">
-                            <input type="checkbox" name="tickets" id="s1"/>
-                            <label for="s1" class="seat booked"></label>
-                        </div>
-                    </div>
-                    <div class="timings">
-
-                    </div>
-                </div>
-                <div class="price">
-                    <div class="total">
-                        <span><span class="count">0</span> Tickets</span>
-                        <div class="amount">0</div>
-                    </div>
-                    <button type="button">Book</button>
-                </div>
+    <div class="ticket-selector">
+        <div class="head">
+            <div class="title">Movie Name</div>
+        </div>
+        <div class="seats">
+            <div class="status">
+                <div class="item">Available</div>
+                <div class="item">Booked</div>
+                <div class="item">Selected</div>
             </div>
+            <div class="all-seats">
+                <input type="checkbox" name="tickets" id="s1"/>
+                <label for="s1" class="seat booked"></label>
+            </div>
+        </div>
+        <div class="timings"></div>
+    </div>
+    <!-- Price -->
+    <div class="price">
+        <div class="total">
+            <span><span class="count">0</span> Tickets</span>
+            <div class="amount">0</div>
+        </div>
+        <button type="button">Book</button>
+    </div>
+</div>
 </body>
+
+<!-- JavaScript -->
 <script src="js/navbar.js"></script>
 <script src="js/scheduletheater1.js"></script>
 </html>
