@@ -8,7 +8,7 @@ const movieId = urlParams.get('id');
 // Function to fetch showtimes for the specific movie
 async function fetchShowtimesForMovie() {
     try {
-        const response = await fetch(`http://localhost:8080/showtimes?movieId=${movieId}`);
+        const response = await fetch(`http://localhost:8080/showtimes?movieID=${movieId}`);
         if (!response.ok) {
             throw new Error(`HTTP Error! Status: ${response.status}`);
         }
