@@ -22,7 +22,7 @@ function createMovieCard(movie) {
                     <div class="col-12">
                         <a href="movieinfo.html?id=${movie.movieID}">
                             <div class="d-grid gap-2">
-                            <button class="btn btn-secondary">See all days</button>
+                            <button class="btn btn-primary">See all days</button>
                             </div>
                         </a>
                     </div>

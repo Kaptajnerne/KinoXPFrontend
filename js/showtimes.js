@@ -15,18 +15,37 @@ async function fetchShowtimesForMovie() {
 
         const showtimesData = await response.json();
 
-        // Create HTML to display showtimes
+        // Create a Bootstrap row to contain showtime cards
+        const showtimesRow = document.createElement("div");
+        showtimesRow.classList.add("row");
+
+        // Create HTML for showtime cards
         const showtimesHtml = showtimesData.map(showtime => `
-            <div class="showtime-card">
-                <p>Date: ${showtime.date}</p>
-                <p>Time: ${showtime.time}</p>
-                <p>Theater: ${showtime.theater.theaterID}</p>
-                <button class="btn btn-primary" data-showtime-id="${showtime.showTimeID}">Book Ticket</button>
+            <div class="col-md-4">
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title">Theater ${showtime.theater.theaterID}</h5>
+                        <table class="table table-bordered">
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Date</th>
+                                    <td>${showtime.date}</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Time</th>
+                                    <td>${showtime.time}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <button class="btn btn-primary" data-showtime-id="${showtime.showTimeID}">Book Ticket</button>
+                    </div>
+                </div>
             </div>
         `).join('');
 
         // Set the showtimes HTML to the container
-        showtimesContainer.innerHTML = showtimesHtml;
+        showtimesRow.innerHTML = showtimesHtml;
+        showtimesContainer.appendChild(showtimesRow);
 
         // Add event listeners for booking tickets
         const bookButtons = document.querySelectorAll('.btn-primary');
@@ -44,4 +63,3 @@ async function fetchShowtimesForMovie() {
 
 // Call the fetchShowtimesForMovie function to populate showtimes
 fetchShowtimesForMovie(movieId);
-
