@@ -64,7 +64,6 @@ document.addEventListener("DOMContentLoaded", function () {
             .then((theaterSize) => {
                 generateSeats(theaterSize);
 
-                //Update event listeners for dynamically generated seats
                 const tickets = seatsContainer.querySelectorAll("input");
                 const updateSeatCountFn = updateSeatCount();
 

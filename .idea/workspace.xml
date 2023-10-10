@@ -5,10 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1cc78451-9cc5-4111-9c2b-11636be42dbc" name="Changes" comment="refactoring">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10-10-2023_10_19__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10-10-2023_10_19__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/scheduletheater1.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/seatSelection.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/scheduletheater2.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reservation.html" beforeDir="false" afterPath="$PROJECT_DIR$/reservation.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/showtimes.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/showtimes.js" afterDir="false" />
     </list>
     <list id="007ee5be-d559-4c19-b9ef-73c734ba0acc" name="Changes by simonbangdessau" comment="Changes by simonbangdessau" />
     <option name="SHOW_DIALOG" value="false" />
@@ -208,7 +206,15 @@
       <option name="project" value="LOCAL" />
       <updated>1696926371660</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="refactoring">
+      <option name="closed" value="true" />
+      <created>1696927456783</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1696927456783</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
