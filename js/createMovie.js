@@ -29,6 +29,11 @@ document.addEventListener('DOMContentLoaded', function () {
                 // Movie created successfully, you can display a success message or perform other actions
                 alert('Movie created successfully');
                 createMovieForm.reset();
+
+                // Redirect back to manage.html after a short delay (e.g., 2 seconds)
+                setTimeout(function () {
+                    window.location.href = 'manage.html';
+                }, 2000); // Redirect after 2 seconds
             } else {
                 // Handle error, display an error message, etc.
                 console.error('Error creating movie');

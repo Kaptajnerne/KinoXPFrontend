@@ -87,6 +87,10 @@ document.getElementById('create-movie').addEventListener('click', function () {
     window.location.href = 'createMovie.html';
 });
 
+document.getElementById('create-showtime').addEventListener('click', function () {
+    window.location.href = 'createShowtime.html';
+});
+
 // Initial load
 fetchMovies();
 fetchShowtimes();
