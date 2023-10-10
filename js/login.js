@@ -1,46 +1,42 @@
 // login.js
+document.addEventListener('DOMContentLoaded', function () {
+    const loginForm = document.getElementById('login-form');
 
-// Get references to the form and input fields
-const loginForm = document.getElementById("login-form");
-const usernameInput = document.getElementById("username");
-const passwordInput = document.getElementById("password");
+    loginForm.addEventListener('submit', function (event) {
+        event.preventDefault();
 
-// Add an event listener to the form for handling login
-loginForm.addEventListener("submit", async (e) => {
-    e.preventDefault();
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
 
-    // Retrieve username and password values from input fields
-    const username = usernameInput.value;
-    const password = passwordInput.value;
+        const loginData = {
+            username: username,
+            password: password
+        };
 
-    // Perform a basic check (you should implement server-side validation)
-    if (!username || !password) {
-        alert("Please enter both username and password.");
-        return;
-    }
-
-    // Send a request to your backend for authentication
-    // You need to implement this part based on your server-side logic
-    // Example:
-    /*
-    try {
-        const response = await fetch("/api/login", {
-            method: "POST",
+        // Make an HTTP POST request to your backend's login endpoint
+        console.log('Before fetch');
+        fetch('http://localhost:8080/admins/login', {
+            method: 'POST',
             headers: {
-                "Content-Type": "application/json",
+                'Content-Type': 'application/json'
             },
-            body: JSON.stringify({ username, password }),
-        });
+            body: JSON.stringify(loginData)
+        })
+            .then(response => {
+                console.log('Response status:', response.status);
+                if (response.ok) {
+                    // Login successful
+                    console.log('Login successful');
+                    window.location.href = 'manage.html'; // Redirect to a dashboard page
+                } else {
+                    // Handle login failure, display an error message, etc.
+                    console.error('Login failed');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
 
-        if (response.ok) {
-            // Successful login
-            alert("Login successful!");
-        } else {
-            // Failed login
-            alert("Login failed. Please check your credentials.");
-        }
-    } catch (error) {
-        console.error("Error:", error);
-    }
-    */
+    });
 });
+
