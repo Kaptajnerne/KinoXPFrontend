@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1cc78451-9cc5-4111-9c2b-11636be42dbc" name="Changes" comment="refactoring">
-      <change beforePath="$PROJECT_DIR$/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/contact.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/styles.css" afterDir="false" />
-    </list>
+    <list default="true" id="1cc78451-9cc5-4111-9c2b-11636be42dbc" name="Changes" comment="Just me makin a lil footer" />
     <list id="007ee5be-d559-4c19-b9ef-73c734ba0acc" name="Changes by simonbangdessau" comment="Changes by simonbangdessau" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -210,7 +207,31 @@
       <option name="project" value="LOCAL" />
       <updated>1696927456783</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Just me makin a lil footer">
+      <option name="closed" value="true" />
+      <created>1696933013769</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1696933013769</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Just me makin a lil footer">
+      <option name="closed" value="true" />
+      <created>1696933340417</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1696933340417</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Just me makin a lil footer">
+      <option name="closed" value="true" />
+      <created>1696933977499</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1696933977499</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -236,6 +257,7 @@
     <MESSAGE value="Changes by simonbangdessau" />
     <MESSAGE value="Fixed" />
     <MESSAGE value="refactoring" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactoring" />
+    <MESSAGE value="Just me makin a lil footer" />
+    <option name="LAST_COMMIT_MESSAGE" value="Just me makin a lil footer" />
   </component>
 </project>
