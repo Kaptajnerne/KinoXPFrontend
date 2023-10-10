@@ -41,6 +41,13 @@ async function fetchMovies() {
     }
 }
 
+// Function to edit a movie by ID
+function editMovie(movieID) {
+    // Redirect to the editMovie.html page with the movie ID as a query parameter
+    window.location.href = `editMovie.html?id=${movieID}`;
+}
+
+
 // Function to delete a movie by ID
 async function deleteMovie(movieID) {
     // Display a confirmation dialog to confirm deletion
