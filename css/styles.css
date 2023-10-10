@@ -140,7 +140,6 @@ body {
 
 .all-seats {
     display: grid;
-    grid-template-columns: repeat(12, 1fr);
     grid-gap: 5px;
     margin: 40px 0;
     margin-top: 20px;
