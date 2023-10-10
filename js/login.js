@@ -1,6 +1,6 @@
-// login.js
 document.addEventListener('DOMContentLoaded', function () {
     const loginForm = document.getElementById('login-form');
+    const createAdminButton = document.getElementById('create-admin-btn');
 
     loginForm.addEventListener('submit', function (event) {
         event.preventDefault();
@@ -13,8 +13,6 @@ document.addEventListener('DOMContentLoaded', function () {
             password: password
         };
 
-        // Make an HTTP POST request to your backend's login endpoint
-        console.log('Before fetch');
         fetch('http://localhost:8080/admins/login', {
             method: 'POST',
             headers: {
@@ -23,20 +21,52 @@ document.addEventListener('DOMContentLoaded', function () {
             body: JSON.stringify(loginData)
         })
             .then(response => {
-                console.log('Response status:', response.status);
+                console.log(response.status);  // Log HTTP status code
                 if (response.ok) {
-                    // Login successful
-                    console.log('Login successful');
-                    window.location.href = 'manage.html'; // Redirect to a dashboard page
+                    window.location.href = 'manage.html';
                 } else {
-                    // Handle login failure, display an error message, etc.
-                    console.error('Login failed');
+                    throw new Error('Login failed');
                 }
             })
             .catch(error => {
-                console.error('Error:', error);
+                console.error('Error during login:', error.message);
+                alert('Login failed. Please check your credentials and try again.');
             });
+    });
 
+    createAdminButton.addEventListener('click', function (event) {
+        event.preventDefault();
+
+        const newAdminUsername = prompt('Enter new admin username:');
+        const newAdminPassword = prompt('Enter new admin password:');
+
+        if (newAdminUsername && newAdminPassword) {
+            const newAdminData = {
+                username: newAdminUsername,
+                password: newAdminPassword
+            };
+
+            fetch('http://localhost:8080/admins', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(newAdminData)
+            })
+                .then(response => {
+                    console.log(response.status);  // Log HTTP status code
+                    if (response.ok) {
+                        alert('Admin created successfully!');
+                    } else {
+                        throw new Error('Failed to create admin');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error during admin creation:', error.message);
+                    alert('Failed to create admin. Please try again later.');
+                });
+        } else {
+            alert('Invalid admin data. Please try again.');
+        }
     });
 });
-
