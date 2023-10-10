@@ -7,13 +7,17 @@ document.addEventListener('DOMContentLoaded', function () {
         const formData = new FormData(createShowtimeForm);
         const showtimeData = {
             date: formData.get('date'),
-            time: formData.get('time'),
-            theaterId: parseInt(formData.get('theaterId')),
-            movieId: parseInt(formData.get('movieId'))
+            time: formData.get('time')
         };
 
+        const theaterId = formData.get('theaterId');
+        const movieId = formData.get('movieId');
+
+        // Append theaterId and movieId as query parameters
+        const url = `http://localhost:8080/showtimes/create?theaterId=${theaterId}&movieId=${movieId}`;
+
         try {
-            const response = await fetch('http://localhost:8080/showtimes/create', {
+            const response = await fetch(url, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
