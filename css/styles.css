@@ -260,4 +260,41 @@ input {
     cursor: pointer;
 }
 
+/* Custom CSS styles for tables */
+#movies-table,
+#showtimes-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+#movies-table th,
+#movies-table td,
+#showtimes-table th,
+#showtimes-table td {
+    border: 1px solid #ccc;
+    padding: 8px;
+}
+
+#movies-table th,
+#showtimes-table th {
+    background-color: #f2f2f2;
+    text-align: left;
+}
+
+#movies-table th:first-child,
+#showtimes-table th:first-child {
+    border-top-left-radius: 5px;
+}
+
+#movies-table th:last-child,
+#showtimes-table th:last-child {
+    border-top-right-radius: 5px;
+}
+
+#movies-table td:last-child,
+#showtimes-table td:last-child {
+    text-align: center;
+}
+
 
