@@ -83,6 +83,10 @@ async function fetchShowtimes() {
     }
 }
 
+document.getElementById('create-movie').addEventListener('click', function () {
+    window.location.href = 'createMovie.html';
+});
+
 // Initial load
 fetchMovies();
 fetchShowtimes();
