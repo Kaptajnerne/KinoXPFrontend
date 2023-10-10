@@ -1,0 +1,467 @@
+Index: reservation.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><!DOCTYPE html>\r\n<html lang=\"en\">\r\n<head>\r\n    <meta charset=\"UTF-8\">\r\n    <title>Title</title>\r\n    <link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/bootstrap@latest/dist/css/bootstrap.min.css\">\r\n    <link rel=\"stylesheet\" href=\"css/styles.css\">\r\n</head>\r\n<body>\r\n\r\n<!-- Navigation bar -->\r\n<div id=\"navbar-container\"></div>\r\n\r\n<!-- Seat picker -->\r\n<div class=\"tickets\">\r\n    <div class=\"ticket-selector\">\r\n        <div class=\"head\">\r\n            <div class=\"title\">Movie Name</div>\r\n        </div>\r\n        <div class=\"seats\">\r\n            <div class=\"status\">\r\n                <div class=\"item\">Available</div>\r\n                <div class=\"item\">Booked</div>\r\n                <div class=\"item\">Selected</div>\r\n            </div>\r\n            <div class=\"all-seats\">\r\n                <input type=\"checkbox\" name=\"tickets\" id=\"s1\"/>\r\n                <label for=\"s1\" class=\"seat booked\"></label>\r\n            </div>\r\n        </div>\r\n        <div class=\"timings\"></div>\r\n    </div>\r\n    <!-- Price -->\r\n    <div class=\"price\">\r\n        <div class=\"total\">\r\n            <span><span class=\"count\">0</span> Tickets</span>\r\n            <div class=\"amount\">0</div>\r\n        </div>\r\n        <button type=\"button\">Book</button>\r\n    </div>\r\n</div>\r\n</body>\r\n\r\n<!-- JavaScript -->\r\n<script src=\"js/navbar.js\"></script>\r\n<script src=\"js/scheduletheater1.js\"></script>\r\n</html>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/reservation.html b/reservation.html
+--- a/reservation.html	(revision e787187fdd2c10828e96582627a24ec2e1ead4fe)
++++ b/reservation.html	(date 1696871012912)
+@@ -24,8 +24,6 @@
+                 <div class="item">Selected</div>
+             </div>
+             <div class="all-seats">
+-                <input type="checkbox" name="tickets" id="s1"/>
+-                <label for="s1" class="seat booked"></label>
+             </div>
+         </div>
+         <div class="timings"></div>
+@@ -43,5 +41,5 @@
+ 
+ <!-- JavaScript -->
+ <script src="js/navbar.js"></script>
+-<script src="js/scheduletheater1.js"></script>
++<script type="module" src="js/scheduletheater1.js"></script>
+ </html>
+\ No newline at end of file
+Index: js/scheduletheater1.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>document.addEventListener(\"DOMContentLoaded\", function () {\r\n    // Sample data for booked seats (replace with your dynamic data)\r\n    const bookedSeats = [1, 2, 5, 8]; // Adjust seat numbers as needed\r\n    const numberOfSeats = 239;\r\n\r\n    // Function to generate dynamic seats\r\n    function generateSeats() {\r\n        let seats = document.querySelector(\".all-seats\");\r\n        for (let i = 1; i <= numberOfSeats; i++) {\r\n            let isBooked = bookedSeats.includes(i);\r\n            let bookedClass = isBooked ? \"booked\" : \"\";\r\n            let disabledAttr = isBooked ? \"disabled\" : \"\";\r\n            seats.insertAdjacentHTML(\r\n                \"beforeend\",\r\n                `<input type=\"checkbox\" name=\"tickets\" id=\"s${i}\" ${disabledAttr} /><label for=\"s${i}\" class=\"seat ${bookedClass}\"></label>`\r\n            );\r\n        }\r\n\r\n        // Update event listeners for dynamically generated seats\r\n        let tickets = seats.querySelectorAll(\"input\");\r\n        tickets.forEach((ticket) => {\r\n            ticket.addEventListener(\"change\", () => {\r\n                let amount = document.querySelector(\".amount\").innerHTML;\r\n                let count = document.querySelector(\".count\").innerHTML;\r\n                amount = Number(amount);\r\n                count = Number(count);\r\n\r\n                if (!ticket.disabled) {\r\n                    if (ticket.checked) {\r\n                        count += 1;\r\n                        amount += 150;\r\n                    } else {\r\n                        count -= 1;\r\n                        amount -= 150;\r\n                    }\r\n                    document.querySelector(\".amount\").innerHTML = amount;\r\n                    document.querySelector(\".count\").innerHTML = count;\r\n                }\r\n            });\r\n        });\r\n    }\r\n\r\n    // Call the function to generate seats\r\n    generateSeats();\r\n});\r\n\r\n\r\n\r\n\r\n\r\n/*\r\nlet seats = document.querySelector(\".all-seats\");\r\nfor (var i = 0; i < 239; i++) {\r\n    let randint = Math.floor(Math.random() * 2);\r\n    let booked = randint === 1 ? \"booked\" : \"\";\r\n    seats.insertAdjacentHTML(\r\n        \"beforeend\",\r\n        '<input type=\"checkbox\" name=\"tickets\" id=\"s' +\r\n        (i + 2) +\r\n        '\" /><label for=\"s' +\r\n        (i + 2) +\r\n        '\" class=\"seat ' +\r\n        booked +\r\n        '\"></label>'\r\n    );\r\n}\r\n\r\nlet tickets = seats.querySelectorAll(\"input\");\r\ntickets.forEach((ticket) => {\r\n    ticket.addEventListener(\"change\", () => {\r\n        let amount = document.querySelector(\".amount\").innerHTML;\r\n        let count = document.querySelector(\".count\").innerHTML;\r\n        amount = Number(amount);\r\n        count = Number(count);\r\n\r\n        if (ticket.checked) {\r\n            count += 1;\r\n            amount += 150;\r\n        } else {\r\n            count -= 1;\r\n            amount -= 150;\r\n        }\r\n        document.querySelector(\".amount\").innerHTML = amount;\r\n        document.querySelector(\".count\").innerHTML = count;\r\n    });\r\n});\r\n*/\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n/*\r\n// Fetch movie and showtime data from your backend API\r\nfetch('your_backend_api_url')\r\n    .then(response => response.json())\r\n    .then(data => {\r\n        // Process the data and generate the schedule dynamically\r\n        generateSchedule(data);\r\n    })\r\n    .catch(error => {\r\n        console.error('Error fetching data:', error);\r\n    });\r\n\r\n// Function to generate the schedule based on the data\r\nfunction generateSchedule(data) {\r\n    const scheduleContainer = document.getElementById('schedule-container');\r\n\r\n    // Loop through the data to create schedule elements\r\n    data.forEach(movie => {\r\n        const movieElement = document.createElement('div');\r\n        movieElement.classList.add('movie');\r\n\r\n        // Create a title for the movie\r\n        const titleElement = document.createElement('h2');\r\n        titleElement.textContent = movie.title;\r\n\r\n        // Create a table to display showtimes for each day\r\n        const tableElement = document.createElement('table');\r\n\r\n        // Loop through showtimes for each day\r\n        movie.showtimes.forEach(day => {\r\n            const row = tableElement.insertRow();\r\n            const cell1 = row.insertCell(0);\r\n            const cell2 = row.insertCell(1);\r\n\r\n            cell1.textContent = day.day;\r\n            cell2.textContent = day.showtime;\r\n        });\r\n\r\n        // Append title and table to the movie element\r\n        movieElement.appendChild(titleElement);\r\n        movieElement.appendChild(tableElement);\r\n\r\n        // Append the movie element to the schedule container\r\n        scheduleContainer.appendChild(movieElement);\r\n    });\r\n}\r\n\r\n*/\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/js/scheduletheater1.js b/js/scheduletheater1.js
+--- a/js/scheduletheater1.js	(revision e787187fdd2c10828e96582627a24ec2e1ead4fe)
++++ b/js/scheduletheater1.js	(date 1696925362099)
+@@ -1,143 +1,81 @@
++import {fetchAnyUrl} from "/js/modulejson.js";
++
+ document.addEventListener("DOMContentLoaded", function () {
+-    // Sample data for booked seats (replace with your dynamic data)
+-    const bookedSeats = [1, 2, 5, 8]; // Adjust seat numbers as needed
+-    const numberOfSeats = 239;
++
++    const seatsContainer = document.querySelector(".all-seats");
+ 
+-    // Function to generate dynamic seats
+-    function generateSeats() {
+-        let seats = document.querySelector(".all-seats");
+-        for (let i = 1; i <= numberOfSeats; i++) {
+-            let isBooked = bookedSeats.includes(i);
+-            let bookedClass = isBooked ? "booked" : "";
+-            let disabledAttr = isBooked ? "disabled" : "";
+-            seats.insertAdjacentHTML(
+-                "beforeend",
+-                `<input type="checkbox" name="tickets" id="s${i}" ${disabledAttr} /><label for="s${i}" class="seat ${bookedClass}"></label>`
+-            );
++    //Generate seats
++    function generateSeats(theater) {
++        const seatsPerLine = theater.seatsPrLine;
++        const numberOfLines = theater.numberOfLines;
++
++        for (let row = 1; row <= numberOfLines; row++) {
++            for (let seatNumber = 1; seatNumber <= seatsPerLine; seatNumber++) {
++                const seatId = `r${row}c${seatNumber}`;
++                const isBooked = false;
++                const bookedClass = isBooked ? "booked" : "";
++                const disabledAttr = isBooked ? "disabled" : "";
++
++                seatsContainer.insertAdjacentHTML(
++                    "beforeend",
++                    `<input type="checkbox" name="tickets" id="${seatId}" ${disabledAttr} />
++                    <label for="${seatId}" class="seat ${bookedClass}"></label>`
++                );
++            }
+         }
++        //Calculate the number of columns for CSS
++        const totalSeats = seatsPerLine * numberOfLines;
++        const numColumns = Math.ceil(totalSeats / numberOfLines);
++        seatsContainer.style.gridTemplateColumns = `repeat(${numColumns}, 1fr)`;
+ 
+-        // Update event listeners for dynamically generated seats
+-        let tickets = seats.querySelectorAll("input");
+-        tickets.forEach((ticket) => {
+-            ticket.addEventListener("change", () => {
+-                let amount = document.querySelector(".amount").innerHTML;
+-                let count = document.querySelector(".count").innerHTML;
+-                amount = Number(amount);
+-                count = Number(count);
++    }
++
++    //Update seats for dynamic flow
++    function updateSeatCount() {
++        let amount = document.querySelector(".amount").innerHTML;
++        let count = document.querySelector(".count").innerHTML;
++        amount = Number(amount);
++        count = Number(count);
+ 
+-                if (!ticket.disabled) {
+-                    if (ticket.checked) {
+-                        count += 1;
+-                        amount += 150;
+-                    } else {
+-                        count -= 1;
+-                        amount -= 150;
+-                    }
+-                    document.querySelector(".amount").innerHTML = amount;
+-                    document.querySelector(".count").innerHTML = count;
+-                }
+-            });
+-        });
++        return (ticket) => {
++            if (!ticket.disabled) {
++                if (ticket.checked) {
++                    count += 1;
++                    amount += 100;
++                } else {
++                    count -= 1;
++                    amount -= 100;
++                }
++                document.querySelector(".amount").innerHTML = amount;
++                document.querySelector(".count").innerHTML = count;
++            }
++        };
+     }
+-
+-    // Call the function to generate seats
+-    generateSeats();
+-});
+ 
+ 
++    const urlParams = new URLSearchParams(window.location.search);
++    const showtimeId = urlParams.get('showtimeId');
+ 
++    if (!showtimeId) {
++        console.error('Showtime ID not found in URL parameters.');
++    } else {
+ 
++        fetchAnyUrl(`http://localhost:8080/showtimes/${showtimeId}/theater`)
++            .then((theaterSize) => {
++                generateSeats(theaterSize);
+ 
+-/*
+-let seats = document.querySelector(".all-seats");
+-for (var i = 0; i < 239; i++) {
+-    let randint = Math.floor(Math.random() * 2);
+-    let booked = randint === 1 ? "booked" : "";
+-    seats.insertAdjacentHTML(
+-        "beforeend",
+-        '<input type="checkbox" name="tickets" id="s' +
+-        (i + 2) +
+-        '" /><label for="s' +
+-        (i + 2) +
+-        '" class="seat ' +
+-        booked +
+-        '"></label>'
+-    );
+-}
++                //Update event listeners for dynamically generated seats
++                const tickets = seatsContainer.querySelectorAll("input");
++                const updateSeatCountFn = updateSeatCount();
+ 
+-let tickets = seats.querySelectorAll("input");
+-tickets.forEach((ticket) => {
+-    ticket.addEventListener("change", () => {
+-        let amount = document.querySelector(".amount").innerHTML;
+-        let count = document.querySelector(".count").innerHTML;
+-        amount = Number(amount);
+-        count = Number(count);
+-
+-        if (ticket.checked) {
+-            count += 1;
+-            amount += 150;
+-        } else {
+-            count -= 1;
+-            amount -= 150;
+-        }
+-        document.querySelector(".amount").innerHTML = amount;
+-        document.querySelector(".count").innerHTML = count;
+-    });
+-});
+-*/
+-
+-
+-
+-
+-
+-
+-
+-
+-/*
+-// Fetch movie and showtime data from your backend API
+-fetch('your_backend_api_url')
+-    .then(response => response.json())
+-    .then(data => {
+-        // Process the data and generate the schedule dynamically
+-        generateSchedule(data);
+-    })
+-    .catch(error => {
+-        console.error('Error fetching data:', error);
+-    });
+-
+-// Function to generate the schedule based on the data
+-function generateSchedule(data) {
+-    const scheduleContainer = document.getElementById('schedule-container');
+-
+-    // Loop through the data to create schedule elements
+-    data.forEach(movie => {
+-        const movieElement = document.createElement('div');
+-        movieElement.classList.add('movie');
+-
+-        // Create a title for the movie
+-        const titleElement = document.createElement('h2');
+-        titleElement.textContent = movie.title;
+-
+-        // Create a table to display showtimes for each day
+-        const tableElement = document.createElement('table');
+-
+-        // Loop through showtimes for each day
+-        movie.showtimes.forEach(day => {
+-            const row = tableElement.insertRow();
+-            const cell1 = row.insertCell(0);
+-            const cell2 = row.insertCell(1);
+-
+-            cell1.textContent = day.day;
+-            cell2.textContent = day.showtime;
+-        });
+-
+-        // Append title and table to the movie element
+-        movieElement.appendChild(titleElement);
+-        movieElement.appendChild(tableElement);
+-
+-        // Append the movie element to the schedule container
+-        scheduleContainer.appendChild(movieElement);
+-    });
+-}
+-
+-*/
++                tickets.forEach((ticket) => {
++                    ticket.addEventListener("change", () => {
++                        updateSeatCountFn(ticket);
++                    });
++                });
++            })
++            .catch((error) => {
++                console.error('Error fetching theater size:', error);
++            });
++    }
++});
+\ No newline at end of file
+Index: js/movieinfo.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>// movieinfo.js\r\n\r\nconst urlParams = new URLSearchParams(window.location.search);\r\nconst movieId = urlParams.get('id');\r\nconst movieInfoContainer = document.getElementById(\"movie-info\");\r\n\r\n// Function to fetch movie details based on the provided ID\r\nasync function fetchMovieDetails() {\r\n    try {\r\n        // Replace this with your actual API endpoint to fetch movie data by ID\r\n        const response = await fetch(`http://localhost:8080/movies/${movieId}`);\r\n        if (!response.ok) {\r\n            throw new Error(`HTTP Error! Status: ${response.status}`);\r\n        }\r\n\r\n        const movieData = await response.json();\r\n\r\n        // Create HTML to display movie details\r\n        const movieInfoHtml = `\r\n            <div class=\"card\">\r\n                <img src=\"${movieData.movieImageUrl}\" height=\"405\" width=\"289\" alt=\"${movieData.title}\">\r\n                <div class=\"card-body\">\r\n                    <h5 class=\"card-title\">${movieData.title}</h5>\r\n                    <p class=\"card-text\">${movieData.description}</p>\r\n                    <p class=\"card-text\">Age Limit: ${movieData.ageLimit}</p>\r\n                    <p class=\"card-text\">Genre: ${movieData.genre}</p>\r\n                    <p class=\"card-text\">Duration: ${movieData.duration} minutes</p>\r\n                </div>\r\n            </div>\r\n        `;\r\n\r\n        // Set the movie info HTML to the container\r\n        movieInfoContainer.innerHTML = movieInfoHtml;\r\n    } catch (error) {\r\n        console.error(\"Error fetching movie details:\", error);\r\n    }\r\n}\r\n\r\n\r\n\r\n// Call the fetchMovieDetails function to populate movie info\r\nconsole.log(movieId);\r\nfetchMovieDetails();\r\n\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/js/movieinfo.js b/js/movieinfo.js
+--- a/js/movieinfo.js	(revision e787187fdd2c10828e96582627a24ec2e1ead4fe)
++++ b/js/movieinfo.js	(date 1696871724550)
+@@ -1,44 +1,36 @@
+-// movieinfo.js
++import { fetchAnyUrl } from "/js/modulejson.js";
+ 
++const movieInfoContainer = document.getElementById("movie-info");
+ const urlParams = new URLSearchParams(window.location.search);
+ const movieId = urlParams.get('id');
+-const movieInfoContainer = document.getElementById("movie-info");
+ 
+-// Function to fetch movie details based on the provided ID
++// fetch movie details
+ async function fetchMovieDetails() {
+     try {
+-        // Replace this with your actual API endpoint to fetch movie data by ID
+-        const response = await fetch(`http://localhost:8080/movies/${movieId}`);
+-        if (!response.ok) {
+-            throw new Error(`HTTP Error! Status: ${response.status}`);
+-        }
+-
+-        const movieData = await response.json();
++        const movieData = await fetchAnyUrl(`http://localhost:8080/movies/${movieId}`);
++        const movieInfoHtml = createMovieInfoHtml(movieData);
++        movieInfoContainer.innerHTML = movieInfoHtml;
++    } catch (error) {
++        console.error("Error fetching movie details:", error);
++    }
++}
+ 
+-        // Create HTML to display movie details
+-        const movieInfoHtml = `
+-            <div class="card">
+-                <img src="${movieData.movieImageUrl}" height="405" width="289" alt="${movieData.title}">
+-                <div class="card-body">
+-                    <h5 class="card-title">${movieData.title}</h5>
+-                    <p class="card-text">${movieData.description}</p>
+-                    <p class="card-text">Age Limit: ${movieData.ageLimit}</p>
+-                    <p class="card-text">Genre: ${movieData.genre}</p>
+-                    <p class="card-text">Duration: ${movieData.duration} minutes</p>
+-                </div>
+-            </div>
+-        `;
+-
+-        // Set the movie info HTML to the container
+-        movieInfoContainer.innerHTML = movieInfoHtml;
+-    } catch (error) {
+-        console.error("Error fetching movie details:", error);
+-    }
++//Create HTML
++function createMovieInfoHtml(movieData) {
++    return `
++        <div class="card">
++            <img src="${movieData.movieImageUrl}" height="405" width="289" alt="${movieData.title}">
++            <div class="card-body">
++                <h5 class="card-title">${movieData.title}</h5>
++                <p class="card-text">${movieData.description}</p>
++                <p class="card-text">Age Limit: ${movieData.ageLimit}</p>
++                <p class="card-text">Genre: ${movieData.genre}</p>
++                <p class="card-text">Duration: ${movieData.duration} minutes</p>
++            </div>
++        </div>
++    `;
+ }
+ 
+-
+-
+-// Call the fetchMovieDetails function to populate movie info
+ console.log(movieId);
+ fetchMovieDetails();
+ 
+Index: js/showtimes.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>// Get the showtimes container element\r\nconst showtimesContainer = document.getElementById(\"showtimes\");\r\n\r\n// Get the movieId from the URL\r\nconst urlParams = new URLSearchParams(window.location.search);\r\nconst movieId = urlParams.get('id');\r\n\r\n// Function to fetch showtimes for the specific movie\r\nasync function fetchShowtimesForMovie() {\r\n    try {\r\n        const response = await fetch(`http://localhost:8080/showtimes?movieID=${movieId}`);\r\n        if (!response.ok) {\r\n            throw new Error(`HTTP Error! Status: ${response.status}`);\r\n        }\r\n\r\n        const showtimesData = await response.json();\r\n\r\n        // Create HTML to display showtimes\r\n        const showtimesHtml = showtimesData.map(showtime => `\r\n            <div class=\"showtime-card\">\r\n                <p>Date: ${showtime.date}</p>\r\n                <p>Time: ${showtime.time}</p>\r\n                <p>Theater: ${showtime.theater.theaterID}</p>\r\n                <button class=\"btn btn-primary\" data-showtime-id=\"${showtime.showTimeID}\">Book Ticket</button>\r\n            </div>\r\n        `).join('');\r\n\r\n        // Set the showtimes HTML to the container\r\n        showtimesContainer.innerHTML = showtimesHtml;\r\n\r\n        // Add event listeners for booking tickets\r\n        const bookButtons = document.querySelectorAll('.btn-primary');\r\n        bookButtons.forEach(button => {\r\n            button.addEventListener('click', () => {\r\n                const showtimeId = button.getAttribute('data-showtime-id');\r\n                // Redirect to a reservation page with the selected showtimeId\r\n                window.location.href = `reservation.html?showtimeId=${showtimeId}`;\r\n            });\r\n        });\r\n    } catch (error) {\r\n        console.error(\"Error fetching showtimes:\", error);\r\n    }\r\n}\r\n\r\n// Call the fetchShowtimesForMovie function to populate showtimes\r\nfetchShowtimesForMovie(movieId);\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/js/showtimes.js b/js/showtimes.js
+--- a/js/showtimes.js	(revision e787187fdd2c10828e96582627a24ec2e1ead4fe)
++++ b/js/showtimes.js	(date 1696873369921)
+@@ -1,47 +1,40 @@
+-// Get the showtimes container element
++import { fetchAnyUrl } from "/js/modulejson.js";
++
+ const showtimesContainer = document.getElementById("showtimes");
+-
+-// Get the movieId from the URL
+ const urlParams = new URLSearchParams(window.location.search);
+ const movieId = urlParams.get('id');
+ 
+-// Function to fetch showtimes for the specific movie
++//Fetch showtimes for specific movie
+ async function fetchShowtimesForMovie() {
+     try {
+-        const response = await fetch(`http://localhost:8080/showtimes?movieID=${movieId}`);
+-        if (!response.ok) {
+-            throw new Error(`HTTP Error! Status: ${response.status}`);
+-        }
++        const showtimesData = await fetchAnyUrl(`http://localhost:8080/showtimes?movieID=${movieId}`);
++        console.log("Showtimes Data:", showtimesData); // Check if showtimeId is present in the fetched data
++
++        const showtimesHtml = createShowtimesHtml(showtimesData);
++        showtimesContainer.innerHTML = showtimesHtml;
+ 
+-        const showtimesData = await response.json();
++    } catch (error) {
++        console.error("Error fetching showtimes:", error);
++    }
++}
+ 
+-        // Create HTML to display showtimes
+-        const showtimesHtml = showtimesData.map(showtime => `
++//Create HTML
++function createShowtimesHtml(showtimesData) {
++    return showtimesData.map(showtime => {
++        console.log("Showtime ID:", showtime.showtimeID); // Log the showTimeID
++        return`
+             <div class="showtime-card">
+                 <p>Date: ${showtime.date}</p>
+                 <p>Time: ${showtime.time}</p>
+                 <p>Theater: ${showtime.theater.theaterID}</p>
+-                <button class="btn btn-primary" data-showtime-id="${showtime.showTimeID}">Book Ticket</button>
++                <a href="reservation.html?showtimeId=${showtime.showtimeID}" class="btn btn-primary">Book Ticket</a>
+             </div>
+-        `).join('');
+-
+-        // Set the showtimes HTML to the container
+-        showtimesContainer.innerHTML = showtimesHtml;
+-
+-        // Add event listeners for booking tickets
+-        const bookButtons = document.querySelectorAll('.btn-primary');
+-        bookButtons.forEach(button => {
+-            button.addEventListener('click', () => {
+-                const showtimeId = button.getAttribute('data-showtime-id');
+-                // Redirect to a reservation page with the selected showtimeId
+-                window.location.href = `reservation.html?showtimeId=${showtimeId}`;
+-            });
+-        });
+-    } catch (error) {
+-        console.error("Error fetching showtimes:", error);
+-    }
++        `;
++    }).join('');
+ }
++
+ 
+ // Call the fetchShowtimesForMovie function to populate showtimes
+-fetchShowtimesForMovie(movieId);
++fetchShowtimesForMovie();
++
+ 
+Index: css/styles.css
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>/* styles.css */\r\n\r\n.left-column {\r\n    float: left;\r\n    max-width: 30%;\r\n    margin-left: 10px;\r\n}\r\n\r\n.right-column {\r\n   justify-content: center;\r\n    max-width: 70%;\r\n    align-items: center;\r\n    justify-content: center;\r\n    margin-left: 100px;\r\n}\r\n\r\n.day {\r\n    font-weight: bold;\r\n    margin-top: 20px;\r\n}\r\n\r\n.timeslot {\r\n    margin-left: 20px;\r\n}\r\n\r\nbody {\r\n    width: 100%;\r\n    height: 100vh;\r\n    margin: 0;\r\n    padding: 0;\r\n}\r\n\r\n.center {\r\n    width: 100%;\r\n    height: 100%;\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    background: linear-gradient(\r\n            to right,\r\n            rgb(162, 216, 162),\r\n            rgb(102, 194, 102)\r\n    );\r\n}\r\n\r\n.tickets {\r\n    width: 550px;\r\n    height: fit-content;\r\n    border: 0.4mm solid rgba(0, 0, 0, 0.08);\r\n    border-radius: 3mm;\r\n    box-sizing: border-box;\r\n    padding: 10px;\r\n    font-family: poppins;\r\n    max-height: 96vh;\r\n    overflow: auto;\r\n    background: white;\r\n    box-shadow: 0px 25px 50px -12px rgba(0, 0, 0, 0.25);\r\n}\r\n\r\n.ticket-selector {\r\n    background: rgb(243, 243, 243);\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: space-between;\r\n    flex-direction: column;\r\n    box-sizing: border-box;\r\n    padding: 20px;\r\n}\r\n\r\n.head {\r\n    width: 100%;\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    margin-bottom: 30px;\r\n}\r\n\r\n.title {\r\n    font-size: 16px;\r\n    font-weight: 600;\r\n}\r\n\r\n.seats {\r\n    width: 100%;\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    flex-direction: column;\r\n    min-height: 150px;\r\n    position: relative;\r\n}\r\n\r\n.status {\r\n    width: 100%;\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: space-evenly;\r\n}\r\n\r\n.seats::before {\r\n    content: \"\";\r\n    position: absolute;\r\n    bottom: 0;\r\n    left: 50%;\r\n    transform: translate(-50%, 0);\r\n    width: 220px;\r\n    height: 7px;\r\n    background: rgb(141, 198, 255);\r\n    border-radius: 0 0 3mm 3mm;\r\n    border-top: 0.3mm solid rgb(180, 180, 180);\r\n}\r\n\r\n.item {\r\n    font-size: 12px;\r\n    position: relative;\r\n}\r\n\r\n.item::before {\r\n    content: \"\";\r\n    position: absolute;\r\n    top: 50%;\r\n    left: -12px;\r\n    transform: translate(0, -50%);\r\n    width: 10px;\r\n    height: 10px;\r\n    background: rgb(255, 255, 255);\r\n    outline: 0.2mm solid rgb(120, 120, 120);\r\n    border-radius: 0.3mm;\r\n}\r\n\r\n.item:nth-child(2)::before {\r\n    background: rgb(180, 180, 180);\r\n    outline: none;\r\n}\r\n\r\n.item:nth-child(3)::before {\r\n    background: rgb(28, 185, 120);\r\n    outline: none;\r\n}\r\n\r\n.all-seats {\r\n    display: grid;\r\n    grid-template-columns: repeat(12, 1fr);\r\n    grid-gap: 5px;\r\n    margin: 40px 0;\r\n    margin-top: 20px;\r\n    position: relative;\r\n}\r\n\r\n.seat {\r\n    width: 10px;\r\n    height: 10px;\r\n    background: white;\r\n    border-radius: 0.5mm;\r\n    outline: 0.3mm solid rgb(180, 180, 180);\r\n    cursor: pointer;\r\n}\r\n\r\n.all-seats input:checked + label {\r\n    background: rgb(28, 185, 120);\r\n    outline: none;\r\n}\r\n\r\n.seat.booked {\r\n    background: rgb(180, 180, 180);\r\n    outline: none;\r\n}\r\n\r\ninput {\r\n    display: none;\r\n}\r\n\r\n.timings {\r\n    width: 100%;\r\n    display: flex;\r\n    flex-direction: column;\r\n    align-items: center;\r\n    justify-content: center;\r\n    margin-top: 30px;\r\n}\r\n\r\n.dates {\r\n    width: 100%;\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: space-between;\r\n}\r\n\r\n.dates-item {\r\n    width: 50px;\r\n    height: 60px;\r\n    background: rgb(233, 233, 233);\r\n    text-align: center;\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    flex-direction: column;\r\n    border-radius: 2mm;\r\n    cursor: pointer;\r\n}\r\n\r\n.day {\r\n    font-size: 12px;\r\n}\r\n\r\n.times {\r\n    width: 100%;\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: space-between;\r\n    margin-top: 10px;\r\n}\r\n\r\n.time {\r\n    font-size: 14px;\r\n    width: fit-content;\r\n    padding: 7px 14px;\r\n    background: rgb(233, 233, 233);\r\n    border-radius: 2mm;\r\n    cursor: pointer;\r\n}\r\n\r\n.timings input:checked + label {\r\n    background: rgb(28, 185, 120);\r\n    color: white;\r\n}\r\n\r\n.price {\r\n    width: 100%;\r\n    box-sizing: border-box;\r\n    padding: 10px 20px;\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: space-between;\r\n}\r\n\r\n.total {\r\n    display: flex;\r\n    flex-direction: column;\r\n    align-items: flex-start;\r\n    justify-content: center;\r\n    font-size: 16px;\r\n    font-weight: 500;\r\n}\r\n\r\n.total span {\r\n    font-size: 11px;\r\n    font-weight: 400;\r\n}\r\n\r\n.price button {\r\n    background: rgb(60, 60, 60);\r\n    color: white;\r\n    font-family: poppins;\r\n    font-size: 14px;\r\n    padding: 7px 14px;\r\n    border-radius: 2mm;\r\n    outline: none;\r\n    border: none;\r\n    cursor: pointer;\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/css/styles.css b/css/styles.css
+--- a/css/styles.css	(revision e787187fdd2c10828e96582627a24ec2e1ead4fe)
++++ b/css/styles.css	(date 1696874875346)
+@@ -140,7 +140,6 @@
+ 
+ .all-seats {
+     display: grid;
+-    grid-template-columns: repeat(12, 1fr);
+     grid-gap: 5px;
+     margin: 40px 0;
+     margin-top: 20px;
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"1cc78451-9cc5-4111-9c2b-11636be42dbc\" name=\"Changes\" comment=\"Fixed\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/contact.html\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/contact.html\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/index.html\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/index.html\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/login.html\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/login.html\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/movieinfo.html\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/movieinfo.html\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/navbar.html\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/navbar.html\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/reservation.html\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/reservation.html\" afterDir=\"false\" />\r\n    </list>\r\n    <list id=\"007ee5be-d559-4c19-b9ef-73c734ba0acc\" name=\"Changes by simonbangdessau\" comment=\"Changes by simonbangdessau\" />\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"ComposerSettings\">\r\n    <execution />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"package.json\" />\r\n        <option value=\"HTML File\" />\r\n        <option value=\"JavaScript File\" />\r\n        <option value=\"CSS File\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$\" value=\"fixing-movieinfo.js\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"GitHubPullRequestSearchHistory\">{\r\n  &quot;lastFilter&quot;: {\r\n    &quot;state&quot;: &quot;OPEN&quot;,\r\n    &quot;assignee&quot;: &quot;SimonBD1&quot;\r\n  }\r\n}</component>\r\n  <component name=\"GitToolBoxStore\">\r\n    <option name=\"projectConfigVersion\" value=\"5\" />\r\n    <option name=\"recentBranches\">\r\n      <RecentBranches>\r\n        <option name=\"branchesForRepo\">\r\n          <list>\r\n            <RecentBranchesForRepo>\r\n              <option name=\"branches\">\r\n                <list>\r\n                  <RecentBranch>\r\n                    <option name=\"branchName\" value=\"feature/SeePlaytimes\" />\r\n                    <option name=\"lastUsedInstant\" value=\"1696409394\" />\r\n                  </RecentBranch>\r\n                  <RecentBranch>\r\n                    <option name=\"branchName\" value=\"testBranchTeams\" />\r\n                    <option name=\"lastUsedInstant\" value=\"1696409393\" />\r\n                  </RecentBranch>\r\n                </list>\r\n              </option>\r\n              <option name=\"repositoryRootUrl\" value=\"file://$PROJECT_DIR$\" />\r\n            </RecentBranchesForRepo>\r\n          </list>\r\n        </option>\r\n      </RecentBranches>\r\n    </option>\r\n  </component>\r\n  <component name=\"GithubPullRequestsUISettings\">\r\n    <option name=\"selectedUrlAndAccountId\">\r\n      <UrlAndAccount>\r\n        <option name=\"accountId\" value=\"b869d2fa-7f4d-4eaf-9d4e-00335c4eb1e7\" />\r\n        <option name=\"url\" value=\"https://github.com/SimonBD1/KinoXPFrontend.git\" />\r\n      </UrlAndAccount>\r\n    </option>\r\n  </component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;associatedIndex&quot;: 2\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"2WCRb1PQr42OOeZFxpJms5rqMBk\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\r\n  \"keyToString\": {\r\n    \"DefaultHtmlFileTemplate\": \"HTML File\",\r\n    \"RunOnceActivity.OpenProjectViewOnStart\": \"true\",\r\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\r\n    \"WebServerToolWindowFactoryState\": \"false\",\r\n    \"codeWithMe.voiceChat.enabledByDefault\": \"false\",\r\n    \"git-widget-placeholder\": \"developer\",\r\n    \"jdk.selected.JAVA_MODULE\": \"21\",\r\n    \"last_opened_file_path\": \"C:/Users/nicla/OneDrive/Documents/3. Sem Dat/KinoXPFrontend/images\",\r\n    \"list.type.of.created.stylesheet\": \"CSS\",\r\n    \"node.js.detected.package.eslint\": \"true\",\r\n    \"node.js.detected.package.tslint\": \"true\",\r\n    \"node.js.selected.package.eslint\": \"(autodetect)\",\r\n    \"node.js.selected.package.tslint\": \"(autodetect)\",\r\n    \"nodejs_package_manager_path\": \"npm\",\r\n    \"settings.editor.selected.configurable\": \"org.jetbrains.plugins.github.ui.GithubSettingsConfigurable\",\r\n    \"vue.rearranger.settings.migration\": \"true\"\r\n  }\r\n}]]></component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"CopyFile.RECENT_KEYS\">\r\n      <recent name=\"C:\\Users\\nicla\\OneDrive\\Documents\\3. Sem Dat\\KinoXPFrontend\\images\" />\r\n    </key>\r\n    <key name=\"MoveFile.RECENT_KEYS\">\r\n      <recent name=\"C:\\Users\\tobia\\IdeaProjects\\KinoXPFrontend\" />\r\n      <recent name=\"C:\\Users\\tobia\\IdeaProjects\\KinoXPFrontend\\html\" />\r\n      <recent name=\"C:\\Users\\nicla\\OneDrive\\Documents\\3. Sem Dat\\KinoXPFrontend\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"1cc78451-9cc5-4111-9c2b-11636be42dbc\" name=\"Changes\" comment=\"\" />\r\n      <created>1696234645005</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1696234645005</updated>\r\n      <workItem from=\"1696234646091\" duration=\"9919000\" />\r\n      <workItem from=\"1696490463357\" duration=\"830000\" />\r\n      <workItem from=\"1696491301540\" duration=\"5387000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"frontend KinoXPFrontend\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1696234916185</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1696234916185</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"Added movieinfo.html, css.styles and bunch of href\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1696327267725</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1696327267725</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"Changes by simonbangdessau\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1696327276321</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1696327276321</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"?\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1696327540528</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1696327540528</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00005\" summary=\"Startet login.html\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1696328479202</created>\r\n      <option name=\"number\" value=\"00005\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1696328479202</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00006\" summary=\"lavet sædesystem\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1696416545329</created>\r\n      <option name=\"number\" value=\"00006\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1696416545329</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00007\" summary=\"lavet sædesystem\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1696417408551</created>\r\n      <option name=\"number\" value=\"00007\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00007\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1696417408551</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00008\" summary=\"Fixed\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1696585590056</created>\r\n      <option name=\"number\" value=\"00008\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00008\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1696585590056</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00009\" summary=\"Fixed\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1696847351131</created>\r\n      <option name=\"number\" value=\"00009\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00009\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1696847351131</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"10\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"frontend KinoXPFrontend\" />\r\n    <MESSAGE value=\"Added movieinfo.html, css.styles and bunch of href\" />\r\n    <MESSAGE value=\"?\" />\r\n    <MESSAGE value=\"Startet login.html\" />\r\n    <MESSAGE value=\"lavet sædesystem\" />\r\n    <MESSAGE value=\"Changes by simonbangdessau\" />\r\n    <MESSAGE value=\"Fixed\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"Fixed\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision e787187fdd2c10828e96582627a24ec2e1ead4fe)
++++ b/.idea/workspace.xml	(date 1696925891470)
+@@ -6,11 +6,10 @@
+   <component name="ChangeListManager">
+     <list default="true" id="1cc78451-9cc5-4111-9c2b-11636be42dbc" name="Changes" comment="Fixed">
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/contact.html" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/login.html" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/movieinfo.html" beforeDir="false" afterPath="$PROJECT_DIR$/movieinfo.html" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/navbar.html" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/styles.css" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/js/movieinfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/movieinfo.js" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/js/scheduletheater1.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/scheduletheater1.js" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/js/showtimes.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/showtimes.js" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/reservation.html" beforeDir="false" afterPath="$PROJECT_DIR$/reservation.html" afterDir="false" />
+     </list>
+     <list id="007ee5be-d559-4c19-b9ef-73c734ba0acc" name="Changes by simonbangdessau" comment="Changes by simonbangdessau" />
+@@ -26,9 +25,9 @@
+     <option name="RECENT_TEMPLATES">
+       <list>
+         <option value="package.json" />
+-        <option value="HTML File" />
+-        <option value="JavaScript File" />
+         <option value="CSS File" />
++        <option value="JavaScript File" />
++        <option value="HTML File" />
+       </list>
+     </option>
+   </component>
