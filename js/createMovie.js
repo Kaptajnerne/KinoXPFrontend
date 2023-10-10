@@ -1,3 +1,5 @@
+// createMovie.js
+
 document.addEventListener('DOMContentLoaded', function () {
     const createMovieForm = document.getElementById('create-movie-form');
 
