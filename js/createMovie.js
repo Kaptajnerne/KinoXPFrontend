@@ -1,5 +1,3 @@
-// createMovie.js
-
 document.addEventListener('DOMContentLoaded', function () {
     const createMovieForm = document.getElementById('create-movie-form');
 
@@ -29,6 +27,11 @@ document.addEventListener('DOMContentLoaded', function () {
                 // Movie created successfully, you can display a success message or perform other actions
                 alert('Movie created successfully');
                 createMovieForm.reset();
+
+                // Redirect to manage.html after a short delay (e.g., 2 seconds)
+                setTimeout(function () {
+                    window.location.href = 'manage.html';
+                });
             } else {
                 // Handle error, display an error message, etc.
                 console.error('Error creating movie');

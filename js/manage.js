@@ -1,5 +1,3 @@
-// manage.js
-
 // Function to fetch and display movies
 async function fetchMovies() {
     try {
@@ -23,6 +21,7 @@ async function fetchMovies() {
         // Create table rows for movies
         movies.forEach(movie => {
             const row = document.createElement('tr');
+            row.dataset.movieid = movie.movieID; // Set data-movieid attribute for identifying movies
             row.innerHTML = `
                 <td>${movie.movieID}</td>
                 <td>${movie.title}</td>
@@ -41,6 +40,40 @@ async function fetchMovies() {
         console.error('Error fetching movies:', error);
     }
 }
+
+// Function to delete a movie by ID
+async function deleteMovie(movieID) {
+    // Display a confirmation dialog to confirm deletion
+    const confirmDeletion = confirm('Are you sure you want to delete this movie?');
+
+    if (!confirmDeletion) {
+        // If the user cancels the deletion, do nothing
+        return;
+    }
+
+    try {
+        const response = await fetch(`http://localhost:8080/movies/${movieID}`, {
+            method: 'DELETE',
+        });
+        if (response.ok) {
+            // Movie deleted successfully, you can display a success message or perform other actions
+            console.log('Movie deleted successfully');
+
+            // Remove the deleted movie row from the table
+            const moviesTable = document.getElementById('movies-table');
+            const rowToDelete = document.querySelector(`#movies-table tr[data-movieid="${movieID}"]`);
+            if (rowToDelete) {
+                moviesTable.removeChild(rowToDelete);
+            }
+        } else {
+            // Handle error, display an error message, etc.
+            console.error('Error deleting movie');
+        }
+    } catch (error) {
+        console.error('Error deleting movie:', error);
+    }
+}
+
 
 // Function to fetch and display showtimes
 async function fetchShowtimes() {
@@ -65,6 +98,7 @@ async function fetchShowtimes() {
         // Create table rows for showtimes
         showtimes.forEach(showtime => {
             const row = document.createElement('tr');
+            row.dataset.showtimeid = showtime.showtimeID; // Set data-showtimeid attribute for identifying showtimes
             row.innerHTML = `
                 <td>${showtime.showtimeID}</td>
                 <td>${showtime.date}</td>
@@ -85,6 +119,10 @@ async function fetchShowtimes() {
 
 document.getElementById('create-movie').addEventListener('click', function () {
     window.location.href = 'createMovie.html';
+});
+
+document.getElementById('create-showtime').addEventListener('click', function () {
+    window.location.href = 'createShowtime.html';
 });
 
 // Initial load
