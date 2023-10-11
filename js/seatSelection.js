@@ -1,80 +1,72 @@
 import {fetchAnyUrl} from "/js/modulejson.js";
 
 document.addEventListener("DOMContentLoaded", function () {
-
     const seatsContainer = document.querySelector(".all-seats");
+    let tickets = [];
+    let showtimeId;
 
-    //Generate seats
-    function generateSeats(theater) {
+    // Generate seats
+    function generateSeats(theater, seatShowtimeData) {
         const seatsPerLine = theater.seatsPrLine;
         const numberOfLines = theater.numberOfLines;
 
         for (let row = 1; row <= numberOfLines; row++) {
             for (let seatNumber = 1; seatNumber <= seatsPerLine; seatNumber++) {
                 const seatId = `r${row}c${seatNumber}`;
-                const isBooked = false;
-                const bookedClass = isBooked ? "booked" : "";
-                const disabledAttr = isBooked ? "disabled" : "";
+                const seatShowtimeId = getSeatShowtimeIdForSeat(seatShowtimeData, row, seatNumber);
+                // Add property to grey out a booked seat (no grey-out logic is yet applied)
 
-                seatsContainer.insertAdjacentHTML(
-                    "beforeend",
-                    `<input type="checkbox" name="tickets" id="${seatId}" ${disabledAttr} />
-                    <label for="${seatId}" class="seat ${bookedClass}"></label>`
-                );
+                const seatHTML = `
+                    <input type="checkbox" name="tickets" id="${seatId}" data-seatShowtimeId="${seatShowtimeId}" />
+                    <label for="${seatId}" class="seat"></label>
+                `;
+                seatsContainer.insertAdjacentHTML("beforeend", seatHTML);
             }
         }
-        //Calculate the number of columns for CSS
-        const totalSeats = seatsPerLine * numberOfLines;
-        const numColumns = Math.ceil(totalSeats / numberOfLines);
+        const numColumns = Math.ceil((seatsPerLine * numberOfLines) / numberOfLines);
         seatsContainer.style.gridTemplateColumns = `repeat(${numColumns}, 1fr)`;
-
     }
 
-    //Update seats for dynamic flow
-    function updateSeatCount() {
-        let amount = document.querySelector(".amount").innerHTML;
-        let count = document.querySelector(".count").innerHTML;
-        amount = Number(amount);
-        count = Number(count);
-
-        return (ticket) => {
-            if (!ticket.disabled) {
-                if (ticket.checked) {
-                    count += 1;
-                    amount += 100;
-                } else {
-                    count -= 1;
-                    amount -= 100;
-                }
-                document.querySelector(".amount").innerHTML = amount;
-                document.querySelector(".count").innerHTML = count;
+    //ShowtimeID for each seat
+    function getSeatShowtimeIdForSeat(seatShowtimeData, row, seatNumber) {
+        for (const seatShowtime of seatShowtimeData) {
+            if (seatShowtime.seat.line === row && seatShowtime.seat.seat === seatNumber) {
+                return seatShowtime.seatShowTimeID;
             }
-        };
+        }
     }
 
-
+    // Fetch theater size and seatShowtime
     const urlParams = new URLSearchParams(window.location.search);
-    const showtimeId = urlParams.get('showtimeId');
-
-    if (!showtimeId) {
-        console.error('Showtime ID not found in URL parameters.');
-    } else {
-
-        fetchAnyUrl(`http://localhost:8080/showtimes/${showtimeId}/theater`)
-            .then((theaterSize) => {
-                generateSeats(theaterSize);
-
-                const tickets = seatsContainer.querySelectorAll("input");
-                const updateSeatCountFn = updateSeatCount();
-
-                tickets.forEach((ticket) => {
-                    ticket.addEventListener("change", () => {
-                        updateSeatCountFn(ticket);
-                    });
+    showtimeId = urlParams.get("showtimeId");
+    fetchAnyUrl(`http://localhost:8080/showtimes/${showtimeId}/theater`)
+        .then((theater) => {
+            fetchAnyUrl(`http://localhost:8080/seatshowtimes/getByShowtimeId?showtimeId=${showtimeId}`)
+                .then((seats) => {
+                    generateSeats(theater, seats);
+                    tickets = Array.from(seatsContainer.querySelectorAll("input"));
+                })
+                .catch((error) => {
+                    console.error("Error fetching seatShowtime information:", error);
                 });
-            })
-            .catch((error) => {
-                console.error('Error fetching theater size:', error);
-            });
-    }
+        })
+        .catch((error) => {
+            console.error("Error fetching theater size:", error);
+        });
+
+    // Book button gets selected seatShowtimeID
+    document.querySelector("button").addEventListener("click", () => {
+        const selectedSeats = tickets
+            .filter((ticket) => ticket.checked)
+            .map((ticket) => ({
+                seatId: ticket.id,
+                seatShowtimeId: ticket.getAttribute("data-seatShowtimeId"),
+            }));
+
+        //URL
+        const seatShowtimeIds = selectedSeats.map((seat) => seat.seatShowtimeId).join(",");
+        const reservationUrl = `createReservation.html?showtimeId=${showtimeId}&seatShowtimeId=${seatShowtimeIds}`;
+        window.location.href = reservationUrl;
+    });
 });
+

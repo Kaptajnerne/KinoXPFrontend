@@ -23,7 +23,7 @@ function createShowtimeCard(showtime) {
                             </tr>
                         </tbody>
                     </table>
-                    <a href="reservation.html?showtimeId=${showtime.showtimeID}" class="btn btn-primary">Book Ticket</a>
+                    <a href="seatSelection.html?showtimeId=${showtime.showtimeID}" class="btn btn-primary">Book Ticket</a>
                 </div>
             </div>
         </div>

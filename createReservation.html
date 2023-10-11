@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Reservation</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@latest/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<!-- Seats and total price -->
+<div class="container">
+    <h4>Selected Seats:</h4>
+    <div id="selectedSeats"></div>
+    <h4>Total Price: </h4>
+    <div id="totalPrice"></div>
+
+    <!-- Form -->
+    <form id="reservationForm">
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" class="form-control" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" class="form-control" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+            <label for="age">Age:</label>
+            <input type="number" class="form-control" id="age" name="age" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Create Reservation</button>
+    </form>
+</div>
+
+<!-- JavaScript -->
+<script src="js/bottomsection.js"></script>
+<script src="js/navbar.js"></script>
+<script type="module" src="js/seatSelection.js"></script>
+</body>
+</html>
