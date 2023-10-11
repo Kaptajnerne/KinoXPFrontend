@@ -48,6 +48,8 @@ function editMovie(movieID) {
 }
 
 
+
+
 // Function to delete a movie by ID
 async function deleteMovie(movieID) {
     // Display a confirmation dialog to confirm deletion
@@ -122,6 +124,10 @@ async function fetchShowtimes() {
     } catch (error) {
         console.error('Error fetching showtimes:', error);
     }
+}
+function editShowtime(showtimeID) {
+    // Redirect to the editMovie.html page with the movie ID as a query parameter
+    window.location.href = `editShowtime.html?id=${showtimeID}`;
 }
 
 document.getElementById('create-movie').addEventListener('click', function () {
