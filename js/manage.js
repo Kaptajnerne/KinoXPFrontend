@@ -84,6 +84,42 @@ async function deleteMovie(movieID) {
 }
 
 
+async function deleteShowtime(showtimeID) {
+    try {
+        // Delete the showtime
+        const response = await fetch(`http://localhost:8080/showtimes/${showtimeID}`, {
+            method: 'DELETE',
+        });
+
+        if (response.ok) {
+            // Delete associated reservations
+            const responseReservations = await fetch(`http://localhost:8080/showtimes/deleteReservationsByShowtime/${showtimeID}`, {
+                method: 'DELETE',
+            });
+
+            if (responseReservations.ok) {
+                console.log('Associated reservations deleted successfully');
+            } else {
+                console.error('Error deleting associated reservations');
+            }
+
+            // Remove the deleted showtime row from the table
+            const showtimesTable = document.getElementById('showtimes-table');
+            const rowToDelete = document.querySelector(`#showtimes-table tr[data-showtimeid="${showtimeID}"]`);
+            if (rowToDelete) {
+                showtimesTable.removeChild(rowToDelete);
+            }
+        } else {
+            console.error('Error deleting showtime');
+        }
+    } catch (error) {
+        console.error('Error deleting showtime:', error);
+    }
+}
+
+
+
+
 // Function to fetch and display showtimes
 async function fetchShowtimes() {
     try {
@@ -116,7 +152,8 @@ async function fetchShowtimes() {
                 <td>${showtime.theater.theaterID}</td>
                 <td>
                     <button onclick="editShowtime(${showtime.showtimeID})">Edit</button>
-                    <button onclick="deleteShowtime(${showtime.showtimeID})">Delete</button>
+                    <button onclick="confirmDeleteShowtime(${showtime.showtimeID})">Delete</button>
+
                 </td>
             `;
             showtimesTable.appendChild(row);
@@ -128,6 +165,14 @@ async function fetchShowtimes() {
 function editShowtime(showtimeID) {
     // Redirect to the editMovie.html page with the movie ID as a query parameter
     window.location.href = `editShowtime.html?id=${showtimeID}`;
+}
+
+function confirmDeleteShowtime(showtimeID) {
+    const confirmDeletion = confirm('Are you sure you want to delete this showtime?');
+
+    if (confirmDeletion) {
+        deleteShowtime(showtimeID);
+    }
 }
 
 document.getElementById('create-movie').addEventListener('click', function () {
