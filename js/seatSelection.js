@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    // Fetch theater size and seatShowtime
+    //Fetch theater and seatShowtime
     const urlParams = new URLSearchParams(window.location.search);
     showtimeId = urlParams.get("showtimeId");
     fetchAnyUrl(`http://localhost:8080/showtimes/${showtimeId}/theater`)

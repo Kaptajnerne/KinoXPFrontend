@@ -5,8 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1cc78451-9cc5-4111-9c2b-11636be42dbc" name="Changes" comment="workspace">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10-10-2023_17_28__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10-10-2023_17_28__Changes_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/createReservation.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/createReservation.html" beforeDir="false" afterPath="$PROJECT_DIR$/createReservation.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/movieinfo.html" beforeDir="false" afterPath="$PROJECT_DIR$/movieinfo.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seatSelection.html" beforeDir="false" afterPath="$PROJECT_DIR$/seatSelection.html" afterDir="false" />
     </list>
     <list id="007ee5be-d559-4c19-b9ef-73c734ba0acc" name="Changes by simonbangdessau" comment="Changes by simonbangdessau" />
     <option name="SHOW_DIALOG" value="false" />
@@ -22,8 +25,8 @@
       <list>
         <option value="package.json" />
         <option value="CSS File" />
-        <option value="JavaScript File" />
         <option value="HTML File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -91,7 +94,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;developer&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;feature/createReservation&quot;,
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;21&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/nicla/OneDrive/Documents/3. Sem Dat/KinoXPFrontend/images&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
@@ -125,7 +128,7 @@
       <workItem from="1696234646091" duration="9919000" />
       <workItem from="1696490463357" duration="830000" />
       <workItem from="1696491301540" duration="5387000" />
-      <workItem from="1697098028185" duration="1260000" />
+      <workItem from="1697194205644" duration="4414000" />
     </task>
     <task id="LOCAL-00001" summary="frontend KinoXPFrontend">
       <option name="closed" value="true" />
@@ -239,23 +242,7 @@
       <option name="project" value="LOCAL" />
       <updated>1696933977499</updated>
     </task>
-    <task id="LOCAL-00015" summary="seatSelection page works and gets seatShowtimeId">
-      <option name="closed" value="true" />
-      <created>1697059524358</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1697059524358</updated>
-    </task>
-    <task id="LOCAL-00016" summary="workspace">
-      <option name="closed" value="true" />
-      <created>1697060556570</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1697060556570</updated>
-    </task>
-    <option name="localTasksCounter" value="17" />
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -281,6 +268,7 @@
     <MESSAGE value="Changes by simonbangdessau" />
     <MESSAGE value="Fixed" />
     <MESSAGE value="refactoring" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactoring" />
+    <MESSAGE value="workspace" />
+    <option name="LAST_COMMIT_MESSAGE" value="workspace" />
   </component>
 </project>

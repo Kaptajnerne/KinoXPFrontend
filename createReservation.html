@@ -1,21 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Create Reservation</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@latest/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-<!-- Seats and total price -->
-<div class="container">
-    <h4>Selected Seats:</h4>
-    <div id="selectedSeats"></div>
-    <h4>Total Price: </h4>
-    <div id="totalPrice"></div>
+<!-- Navigation bar -->
+<div id="navbar-container"></div>
 
-    <!-- Form -->
-    <form id="reservationForm">
+<!-- Create Movie -->
+<div class="container mt-4">
+    <h2>Booking</h2>
+    <form id="booking-form">
         <div class="form-group">
             <label for="name">Name:</label>
             <input type="text" class="form-control" id="name" name="name" required>
@@ -28,14 +24,22 @@
             <label for="age">Age:</label>
             <input type="number" class="form-control" id="age" name="age" required>
         </div>
-        <button type="submit" class="btn btn-primary">Create Reservation</button>
+        <div class="form-group">
+            <label for="fullPrice">Full Price:</label>
+            <input type="text" class="form-control" id="fullPrice" name="fullPrice" disabled>
+        </div>
+        <br>
+        <button type="button" class="btn btn-primary" id="book-button">Book</button>
     </form>
+    <br>
 </div>
+
+<div id="bottom-section"></div>
 
 <!-- JavaScript -->
 <script src="js/bottomsection.js"></script>
 <script src="js/navbar.js"></script>
-<script type="module" src="js/seatSelection.js"></script>
+<script type="module" src="js/createReservation.js"></script>
 </body>
 </html>
 

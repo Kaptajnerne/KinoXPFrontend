@@ -1,4 +1,4 @@
-// Function to fetch and display movies
+//Fetch and display movies
 async function fetchMovies() {
     try {
         const response = await fetch('http://localhost:8080/movies');
