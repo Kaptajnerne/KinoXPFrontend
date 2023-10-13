@@ -14,12 +14,12 @@ document.addEventListener("DOMContentLoaded", function () {
             for (let seatNumber = 1; seatNumber <= seatsPerLine; seatNumber++) {
                 const seatId = `r${row}c${seatNumber}`;
                 const seatShowtimeId = getSeatShowtimeIdForSeat(seatShowtimeData, row, seatNumber);
-                // Add property to grey out a booked seat (no grey-out logic is yet applied)
+                const isBooked = isSeatBooked(seatShowtimeData, seatShowtimeId);
 
                 const seatHTML = `
-                    <input type="checkbox" name="tickets" id="${seatId}" data-seatShowtimeId="${seatShowtimeId}" />
-                    <label for="${seatId}" class="seat"></label>
-                `;
+                <input type="checkbox" name="tickets" id="${seatId}" data-seatShowtimeId="${seatShowtimeId}" ${isBooked ? 'disabled' : ''} />
+                <label for="${seatId}" class="seat ${isBooked ? 'booked' : ''}"></label>
+            `;
                 seatsContainer.insertAdjacentHTML("beforeend", seatHTML);
             }
         }
@@ -35,6 +35,13 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         }
     }
+
+    //Checks if a seat is booked or not
+    function isSeatBooked(seatShowtimeData, seatShowtimeId) {
+        const matchingSeatShowtime = seatShowtimeData.find(seatShowtime => seatShowtime.seatShowTimeID === seatShowtimeId);
+        return matchingSeatShowtime.reserved;
+    }
+
 
     //Fetch theater and seatShowtime
     const urlParams = new URLSearchParams(window.location.search);
@@ -62,11 +69,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 seatId: ticket.id,
                 seatShowtimeId: ticket.getAttribute("data-seatShowtimeId"),
             }));
-
-        //URL
         const seatShowtimeIds = selectedSeats.map((seat) => seat.seatShowtimeId).join(",");
         const reservationUrl = `createReservation.html?showtimeId=${showtimeId}&seatShowtimeId=${seatShowtimeIds}`;
         window.location.href = reservationUrl;
     });
 });
-
