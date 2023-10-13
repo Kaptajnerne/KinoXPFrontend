@@ -4,7 +4,7 @@ const movieInfoContainer = document.getElementById("movie-info");
 const urlParams = new URLSearchParams(window.location.search);
 const movieId = urlParams.get('id');
 
-// Function to fetch movie details based on the provided ID
+//Fetch movie details
 async function fetchMovieDetails() {
     try {
         const movieData = await fetchAnyUrl(`http://localhost:8080/movies/${movieId}`);
