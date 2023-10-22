@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KinoXP - Contact</title>
+    <title>KinoXP - Manage</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@latest/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/styles.css">
 </head>
@@ -12,20 +12,22 @@
 <!-- Navigation bar -->
 <div id="navbar-container"></div>
 
-<!-- Contact Information -->
+<!-- Movie Management -->
 <div class="container mt-4">
-    <h1 class="mb-3">Contact Information</h1>
-    <div class="mt-4">
-        <h3>Contact Details</h3>
-        <p>Email: nidos@scrummaster.com</p>
-        <p>Phone: +45 32453114</p>
-        <p>Address: 29N, Guldbergsgade, København N</p>
-    </div>
+    <h2>Manage Movies</h2>
+    <table id="movies-table"></table>
+    <button id="create-movie">Create Movie</button>
 </div>
-<div id="bottom-section"></div>
+
+<!-- Showtime Management -->
+<div class="container mt-4">
+    <h2>Manage Showtimes</h2>
+    <table id="showtimes-table"></table>
+    <button id="create-showtime">Create Showtime</button>
+</div>
 
 <!-- JavaScript -->
 <script src="js/navbar.js"></script>
-<script src="js/bottomsection.js"></script>
+<script src="js/manage.js"></script>
 </body>
 </html>

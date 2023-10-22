@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit Showtime - KinoXP</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@latest/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<div id="navbar-container"></div>
+
+<div class="container mt-4">
+  <h2>Edit Showtime</h2>
+  <form id="edit-showtime-form">
+    <input type="hidden" id="showtime-id">
+    <div class="mb-3">
+      <label for="date" class="form-label">Date</label>
+      <input type="date" class="form-control" id="date" name="date" required>
+    </div>
+    <div class="mb-3">
+      <label for="time" class="form-label">Time</label>
+      <input type="time" class="form-control" id="time" name="time" required>
+    </div>
+    <div class="mb-3">
+      <label for="movie-id" class="form-label">Movie ID</label>
+      <input type="number" class="form-control" id="movie-id" name="movieId" required>
+    </div>
+    <div class="mb-3">
+      <label for="theater-id" class="form-label">Theater ID</label>
+      <input type="number" class="form-control" id="theater-id" name="theaterId" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Save Changes</button>
+  </form>
+</div>
+
+<script src="js/navbar.js"></script>
+<script src="js/editShowtime.js"></script>
+</body>
+</html>

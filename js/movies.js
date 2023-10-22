@@ -3,7 +3,7 @@ import { fetchAnyUrl } from "/js/modulejson.js";
 const urlMovies = "http://localhost:8080/movies";
 const moviesContainer = document.getElementById("movies-container");
 
-//Creates a movie card + maybe add if statement for theater hall, so we can dynamically add the correct link
+//Creates a movie card
 function createMovieCard(movie) {
     const movieTemplate = document.createElement("div");
     movieTemplate.classList.add("col-6", "col-sm-6", "col-md-4", "col-lg-3", "mb-4");
@@ -22,7 +22,7 @@ function createMovieCard(movie) {
                     <div class="col-12">
                         <a href="movieinfo.html?id=${movie.movieID}">
                             <div class="d-grid gap-2">
-                            <button class="btn btn-secondary">See all days</button>
+                            <button class="btn btn-primary">See all days</button>
                             </div>
                         </a>
                     </div>

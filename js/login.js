@@ -1,46 +1,72 @@
-// login.js
+document.addEventListener('DOMContentLoaded', function () {
+    const loginForm = document.getElementById('login-form');
+    const createAdminButton = document.getElementById('create-admin-btn');
 
-// Get references to the form and input fields
-const loginForm = document.getElementById("login-form");
-const usernameInput = document.getElementById("username");
-const passwordInput = document.getElementById("password");
+    loginForm.addEventListener('submit', function (event) {
+        event.preventDefault();
 
-// Add an event listener to the form for handling login
-loginForm.addEventListener("submit", async (e) => {
-    e.preventDefault();
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
 
-    // Retrieve username and password values from input fields
-    const username = usernameInput.value;
-    const password = passwordInput.value;
+        const loginData = {
+            username: username,
+            password: password
+        };
 
-    // Perform a basic check (you should implement server-side validation)
-    if (!username || !password) {
-        alert("Please enter both username and password.");
-        return;
-    }
-
-    // Send a request to your backend for authentication
-    // You need to implement this part based on your server-side logic
-    // Example:
-    /*
-    try {
-        const response = await fetch("/api/login", {
-            method: "POST",
+        fetch('http://localhost:8080/admins/login', {
+            method: 'POST',
             headers: {
-                "Content-Type": "application/json",
+                'Content-Type': 'application/json'
             },
-            body: JSON.stringify({ username, password }),
-        });
+            body: JSON.stringify(loginData)
+        })
+            .then(response => {
+                console.log(response.status);  // Log HTTP status code
+                if (response.ok) {
+                    window.location.href = 'manage.html';
+                } else {
+                    throw new Error('Login failed');
+                }
+            })
+            .catch(error => {
+                console.error('Error during login:', error.message);
+                alert('Login failed. Please check your credentials and try again.');
+            });
+    });
 
-        if (response.ok) {
-            // Successful login
-            alert("Login successful!");
+    createAdminButton.addEventListener('click', function (event) {
+        event.preventDefault();
+
+        const newAdminUsername = prompt('Enter new admin username:');
+        const newAdminPassword = prompt('Enter new admin password:');
+
+        if (newAdminUsername && newAdminPassword) {
+            const newAdminData = {
+                username: newAdminUsername,
+                password: newAdminPassword
+            };
+
+            fetch('http://localhost:8080/admins', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(newAdminData)
+            })
+                .then(response => {
+                    console.log(response.status);  // Log HTTP status code
+                    if (response.ok) {
+                        alert('Admin created successfully!');
+                    } else {
+                        throw new Error('Failed to create admin');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error during admin creation:', error.message);
+                    alert('Failed to create admin. Please try again later.');
+                });
         } else {
-            // Failed login
-            alert("Login failed. Please check your credentials.");
+            alert('Invalid admin data. Please try again.');
         }
-    } catch (error) {
-        console.error("Error:", error);
-    }
-    */
+    });
 });
